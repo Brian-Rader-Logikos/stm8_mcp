@@ -1,0 +1,713 @@
+@startuml inline_umlgraph_1.png
+  start
+
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :Analog_slider = adc_tmp16 / 4;
+    :Analog_slider = adc_tmp16 / 4;
+    floating note
+      ADC range [ 0: 1023 ] 
+      PWM range [ 0: 250 ]
+    end note
+    :UI_Speed = 0;
+
+    :tmp_sint16 = Digital_trim_switch;
+    :tmp_sint16 = Digital_trim_switch;
+    note right: dig. trim is signed
+    :tmp_sint16 += Analog_slider;
+    :tmp_sint16 += Analog_slider;
+    floating note: clip negative to 0
+    if (tmp_sint16 > 0) then
+    if (tmp_sint16 > 0) then
+        if (tmp_sint16 > THR_MAX) then
+        if (tmp_sint16 > THR_MAX) then
+            :tmp_sint16 = THR_MAX;
+            :tmp_sint16 = THR_MAX;
+        endif
+        :UI_Speed = tmp_sint16;
+        :UI_Speed = tmp_sint16;
+    endif
+    
+    if (RESET == sm_state) then
+        floating note
+          require stick to be 
+          down before arm/ready
+        end note
+        if (Analog_slider > 0) then
+            :Faultm_set(THROTTLE_HI);
+            :UI_Speed = 0;
+        endif
+    elseif (RUNNING == sm_state)
+        if (Analog_slider > 0) then
+            floating note: prevent going to slow
+            if (UI_Speed < LOW_SPEED_THR) then
+                :UI_Speed = U8_MAX;
+                note
+                  U8_MAX signifies to 
+                  call BLDC_Stop()
+                end note  
+            endif
+        endif
+    endif
+
+    :BLDC_PWMDC_Set(UI_Speed);
+  stop
+@enduml
+@startuml inline_umlgraph_2.png
+  start
+
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :Analog_slider = adc_tmp16 / 4;
+    :Analog_slider = adc_tmp16 / 4;
+    floating note
+      ADC range [ 0: 1023 ] 
+      PWM range [ 0: 250 ]
+    end note
+    :UI_Speed = 0;
+
+    :tmp_sint16 = Digital_trim_switch;
+    :tmp_sint16 = Digital_trim_switch;
+    note right: dig. trim is signed
+    :tmp_sint16 += Analog_slider;
+    :tmp_sint16 += Analog_slider;
+    floating note: clip negative to 0
+    if (tmp_sint16 > 0) then
+    if (tmp_sint16 > 0) then
+        if (tmp_sint16 > THR_MAX) then
+        if (tmp_sint16 > THR_MAX) then
+            :tmp_sint16 = THR_MAX;
+            :tmp_sint16 = THR_MAX;
+        endif
+        :UI_Speed = tmp_sint16;
+        :UI_Speed = tmp_sint16;
+    endif
+    
+    if (RESET == sm_state) then
+        floating note
+          require stick to be 
+          down before arm/ready
+        end note
+        if (Analog_slider > 0) then
+            :Faultm_set(THROTTLE_HI);
+            :UI_Speed = 0;
+        endif
+    elseif (RUNNING == sm_state)
+        if (Analog_slider > 0) then
+            floating note: prevent going to slow
+            if (UI_Speed < LOW_SPEED_THR) then
+                :UI_Speed = U8_MAX;
+                note
+                  U8_MAX signifies to 
+                  call BLDC_Stop()
+                end note  
+            endif
+        endif
+    endif
+
+    :BLDC_PWMDC_Set(UI_Speed);
+  stop
+@enduml
+@startuml inline_umlgraph_3.png
+class           BLDC_sm {
+  BLDC_STATE_T BLDC_state
+  uint16_t BLDC_commut_pd
+  uint16_t BLDC_commut_pd
+  uint16_t Set_speed
+  uint16_t Set_speed
+  uint16_t UI_speed
+  uint16_t UI_speed
+  void BLDC_stop()
+  uint16_t BLDC_get_commut_pd()
+  uint16_t BLDC_get_commut_pd()
+  BLDC_STATE_T BLDC_get_state()
+  void BLDC_update()
+}
+class           BG_task{
+  uint16_t Analog_slider
+  uint16_t Analog_slider
+  uint8_t UI_speed
+  int8_t Digital_trim
+  uint8_t Task_rdy_flag
+  uint16_t Vsystem
+  uint16_t Vsystem
+  void Task_set_rdy()
+  void Task_Chk_rdy()
+}
+class           Stepper{
+  uint8_t Sequence_step
+  uint16_t BEMF_fall
+  uint16_t BEMF_fall
+  uint16_t BEMF_rise
+  uint16_t BEMF_rise
+  uint16_t Get_sys_voltage()
+  uint16_t Get_sys_voltage()
+  void Stepper()
+}
+class           Driver{
+  uint16_t ADC_instant
+  uint16_t ADC_instant
+  uint16_t BEMF_fbuf[4]
+  uint16_t BEMF_fbuf[4]
+  void Driver_update()
+  void Driver_step()
+  void Driver_post_ADC()
+  uint16_t Driver_get_ADC()
+  uint16_t Driver_get_ADC()
+  uint16_t Driver_get_BEMF()
+  uint16_t Driver_get_BEMF()
+}
+class           Faultm{
+  fault_status_t Status_word
+  faultm_mat_t fault_matrix[ NR_DEFINED_FAULTS ]
+  void Faultm_set(faultm_ID_t)
+  fault_status_t Faultm_get_status()
+  void Faultm_upd(faultm_ID_t, faultm_assert_t)
+  void Faultm_init()
+}
+class           MCU_stm8{
+  void Set_PWM_DC(uint16_t)
+  void Set_PWM_DC(uint16_t)
+  void Stop_PWM()
+  void Phase_control()
+}
+class           stm8_isr{
+  void TIM2_UPD_OVF_BRK_IRQHandler()
+  void TIM3_UPD_OVF_BRK_IRQHandler()
+  void TIM4_UPD_OVF_IRQHandler()
+  void ADC2_IRQHandler()
+}
+
+stm8_isr ..> "Driver_update()" Driver
+stm8_isr ..> "Driver_step()" Driver
+stm8_isr ..> "Driver_post_ADC_con()" Driver
+
+Driver ..> "Stepper()" Stepper
+Driver ..> "BLDC_update()" BLDC_sm
+Driver ..> "Task_set_ready()" BG_task
+
+BG_task ..> "Faultm_upd()" Faultm
+BG_task ..> "Faultm_set()" Faultm
+BG_task ..> "BLDC_get_state()" BLDC_sm
+BG_task ..> "Get_sys_voltage()" Stepper
+
+BLDC_sm ..> "Faultm_get_status()" Faultm
+BLDC_sm ..> "Faultm_init()" Faultm
+BLDC_sm ..> "Set_PWM_DC()" MCU_stm8
+BLDC_sm ..> "Stop_PWM()" MCU_stm8
+
+Stepper ..> "Driver_get_ADC()" Driver
+Stepper ..> "Driver_get_BEMF()" Driver
+Stepper ..> "Phase_control()" MCU_stm8
+@enduml
+@startuml inline_umlgraph_4.png
+class           BLDC_sm {
+  BLDC_STATE_T BLDC_state
+  uint16_t BLDC_commut_pd
+  uint16_t BLDC_commut_pd
+  uint16_t Set_speed
+  uint16_t Set_speed
+  uint16_t UI_speed
+  uint16_t UI_speed
+  void BLDC_stop()
+  uint16_t BLDC_get_commut_pd()
+  uint16_t BLDC_get_commut_pd()
+  BLDC_STATE_T BLDC_get_state()
+  void BLDC_update()
+}
+class           BG_task{
+  uint16_t Analog_slider
+  uint16_t Analog_slider
+  uint8_t UI_speed
+  int8_t Digital_trim
+  uint8_t Task_rdy_flag
+  uint16_t Vsystem
+  uint16_t Vsystem
+  void Task_set_rdy()
+  void Task_Chk_rdy()
+}
+class           Stepper{
+  uint8_t Sequence_step
+  uint16_t BEMF_fall
+  uint16_t BEMF_fall
+  uint16_t BEMF_rise
+  uint16_t BEMF_rise
+  uint16_t Get_sys_voltage()
+  uint16_t Get_sys_voltage()
+  void Stepper()
+}
+class           Driver{
+  uint16_t ADC_instant
+  uint16_t ADC_instant
+  uint16_t BEMF_fbuf[4]
+  uint16_t BEMF_fbuf[4]
+  void Driver_update()
+  void Driver_step()
+  void Driver_post_ADC()
+  uint16_t Driver_get_ADC()
+  uint16_t Driver_get_ADC()
+  uint16_t Driver_get_BEMF()
+  uint16_t Driver_get_BEMF()
+}
+class           Faultm{
+  fault_status_t Status_word
+  faultm_mat_t fault_matrix[ NR_DEFINED_FAULTS ]
+  void Faultm_set(faultm_ID_t)
+  fault_status_t Faultm_get_status()
+  void Faultm_upd(faultm_ID_t, faultm_assert_t)
+  void Faultm_init()
+}
+class           MCU_stm8{
+  void Set_PWM_DC(uint16_t)
+  void Set_PWM_DC(uint16_t)
+  void Stop_PWM()
+  void Phase_control()
+}
+class           stm8_isr{
+  void TIM2_UPD_OVF_BRK_IRQHandler()
+  void TIM3_UPD_OVF_BRK_IRQHandler()
+  void TIM4_UPD_OVF_IRQHandler()
+  void ADC2_IRQHandler()
+}
+
+stm8_isr ..> "Driver_update()" Driver
+stm8_isr ..> "Driver_step()" Driver
+stm8_isr ..> "Driver_post_ADC_con()" Driver
+
+Driver ..> "Stepper()" Stepper
+Driver ..> "BLDC_update()" BLDC_sm
+Driver ..> "Task_set_ready()" BG_task
+
+BG_task ..> "Faultm_upd()" Faultm
+BG_task ..> "Faultm_set()" Faultm
+BG_task ..> "BLDC_get_state()" BLDC_sm
+BG_task ..> "Get_sys_voltage()" Stepper
+
+BLDC_sm ..> "Faultm_get_status()" Faultm
+BLDC_sm ..> "Faultm_init()" Faultm
+BLDC_sm ..> "Set_PWM_DC()" MCU_stm8
+BLDC_sm ..> "Stop_PWM()" MCU_stm8
+
+Stepper ..> "Driver_get_ADC()" Driver
+Stepper ..> "Driver_get_BEMF()" Driver
+Stepper ..> "Phase_control()" MCU_stm8
+@enduml
+@startuml inline_umlgraph_5.png
+start
+    :mask = faultm_ID;
+    note right: mask = <i> alternatively</i> (1 << faultm_ID)
+    note right: mask = <i> alternatively</i> (1 << faultm_ID)
+    :pfaultm->state =  (FALSE != pfaultm->enabled);
+    :pfaultm->bucket = -1;
+    :pfaultm->bucket = -1;
+    note right
+      set bucket to max signifies latched - in lieu of explicit state variable
+      -1 is always max unsigned int and thus > <i>faultm_mat_t:bucket</i>
+      -1 is always max unsigned int and thus > <i>faultm_mat_t:bucket</i>
+    end note
+    
+    :fault_status_reg |= mask;
+    note: 8-bit status-word
+stop
+@enduml
+@startuml inline_umlgraph_6.png
+start
+
+:pfault = fault_matrix[fault_ID];
+note right: pointer to element at index
+:Threshold = pfault->threshold;
+note right
+ Threshld should be cfg'able per
+ fault (in code, or const-array)
+end note
+
+if (tcondition) then (yes) 
+    if ( (pfault->bucket) < Threshold ) then (yes)
+        :pfault->bucket += 1;
+        :pfault->bucket += 1;
+    else (no)
+        :Faultm_set( fault_ID );
+        note right
+          - sets status word
+          - once the fault is set, 
+            it is not cleared
+        end note
+    endif   
+else (no)
+    if ( pfault->bucket > 0 ) then (yes)
+        :pfault->bucket -= 1;
+        :pfault->bucket -= 1;
+    endif
+endif
+
+stop
+@enduml
+@startuml inline_umlgraph_7.png
+start
+    :mask = faultm_ID;
+    note right: mask = <i> alternatively</i> (1 << faultm_ID)
+    note right: mask = <i> alternatively</i> (1 << faultm_ID)
+    :pfaultm->state =  (FALSE != pfaultm->enabled);
+    :pfaultm->bucket = -1;
+    :pfaultm->bucket = -1;
+    note right
+      set bucket to max signifies latched - in lieu of explicit state variable
+      -1 is always max unsigned int and thus > <i>faultm_mat_t:bucket</i>
+      -1 is always max unsigned int and thus > <i>faultm_mat_t:bucket</i>
+    end note
+    
+    :fault_status_reg |= mask;
+    note: 8-bit status-word
+stop
+@enduml
+@startuml inline_umlgraph_8.png
+start
+
+:pfault = fault_matrix[fault_ID];
+note right: pointer to element at index
+:Threshold = pfault->threshold;
+note right
+ Threshld should be cfg'able per
+ fault (in code, or const-array)
+end note
+
+if (tcondition) then (yes) 
+    if ( (pfault->bucket) < Threshold ) then (yes)
+        :pfault->bucket += 1;
+        :pfault->bucket += 1;
+    else (no)
+        :Faultm_set( fault_ID );
+        note right
+          - sets status word
+          - once the fault is set, 
+            it is not cleared
+        end note
+    endif   
+else (no)
+    if ( pfault->bucket > 0 ) then (yes)
+        :pfault->bucket -= 1;
+        :pfault->bucket -= 1;
+    endif
+endif
+
+stop
+@enduml
+@startuml inline_umlgraph_9.png
+stm8_ISR -> Main: main()
+
+Main -> stm8_ISR: Enable TIM4 ISR
+
+group while
+
+  opt 0.5 ms timer expires
+    stm8_ISR ->> BG_task: On_Timer_tick()  
+    BG_task ->> BG_task: Set_ready()
+  end
+
+  Main -> BG_task: Check_ready()
+  BG_task --> Main: Task Ready
+
+  opt Task Ready
+    Main -> BG_task: BG_update()
+    BG_task -> BG_task: BG_sm_actions()
+    BG_task -> BG_task: BG_sm_transitions()
+  end
+
+end
+@enduml
+@startuml inline_umlgraph_10.png
+stm8_ISR -> Main: main()
+
+Main -> stm8_ISR: Enable TIM4 ISR
+
+group while
+
+  opt 0.5 ms timer expires
+    stm8_ISR ->> BG_task: On_Timer_tick()  
+    BG_task ->> BG_task: Set_ready()
+  end
+
+  Main -> BG_task: Check_ready()
+  BG_task --> Main: Task Ready
+
+  opt Task Ready
+    Main -> BG_task: BG_update()
+    BG_task -> BG_task: BG_sm_actions()
+    BG_task -> BG_task: BG_sm_transitions()
+  end
+
+end
+@enduml
+@startuml inline_umlgraph_11.png
+  start
+
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :adc_tmp16 = ADC1_GetBufferValue( ADC1_CHANNEL_3 );
+    :Analog_slider = adc_tmp16 / 4;
+    :Analog_slider = adc_tmp16 / 4;
+    floating note
+      ADC range [ 0: 1023 ] 
+      PWM range [ 0: 250 ]
+    end note
+    :UI_Speed = 0;
+
+    :tmp_sint16 = Digital_trim_switch;
+    :tmp_sint16 = Digital_trim_switch;
+    note right: dig. trim is signed
+    :tmp_sint16 += Analog_slider;
+    :tmp_sint16 += Analog_slider;
+    floating note: clip negative to 0
+    if (tmp_sint16 > 0) then
+    if (tmp_sint16 > 0) then
+        if (tmp_sint16 > THR_MAX) then
+        if (tmp_sint16 > THR_MAX) then
+            :tmp_sint16 = THR_MAX;
+            :tmp_sint16 = THR_MAX;
+        endif
+        :UI_Speed = tmp_sint16;
+        :UI_Speed = tmp_sint16;
+    endif
+    
+    if (RESET == sm_state) then
+        floating note
+          require stick to be 
+          down before arm/ready
+        end note
+        if (Analog_slider > 0) then
+            :Faultm_set(THROTTLE_HI);
+            :UI_Speed = 0;
+        endif
+    elseif (RUNNING == sm_state)
+        if (Analog_slider > 0) then
+            floating note: prevent going to slow
+            if (UI_Speed < LOW_SPEED_THR) then
+                :UI_Speed = U8_MAX;
+                note
+                  U8_MAX signifies to 
+                  call BLDC_Stop()
+                end note  
+            endif
+        endif
+    endif
+
+    :BLDC_PWMDC_Set(UI_Speed);
+  stop
+@enduml
+@startuml inline_umlgraph_12.png
+  start
+    :u16 = BLDC_OL_comm_tm;
+    :u16 = BLDC_OL_comm_tm;
+    note right: grab current timing value
+
+    if (u16 > tgt_commutation_per) then (yes)
+    if (u16 > tgt_commutation_per) then (yes)
+        :u16 -= ONE_RAMP_UNIT;
+        :u16 -= ONE_RAMP_UNIT;
+        if (u16 < tgt_commutation_per) then (yes)
+        if (u16 < tgt_commutation_per) then (yes)
+            :u16 = tgt_commutation_per;
+            :u16 = tgt_commutation_per;
+            note left: undershoot, clamp to target
+        endif
+        :BLDC_OL_comm_tm  = u16;
+        :BLDC_OL_comm_tm  = u16;
+    elseif (u16 < tgt_commutation_per) then (else)
+    elseif (u16 < tgt_commutation_per) then (else)
+        :u16 += ONE_RAMP_UNIT;
+        :u16 += ONE_RAMP_UNIT;
+        if (u16 > tgt_commutation_per) then (yes)
+        if (u16 > tgt_commutation_per) then (yes)
+            :u16 = tgt_commutation_per;
+            :u16 = tgt_commutation_per;
+            note left: overshoot clamp to target
+        endif
+        :BLDC_OL_comm_tm  = u16;
+        :BLDC_OL_comm_tm  = u16;
+    endif
+  stop
+@enduml
+@startuml inline_umlgraph_13.png
+  start
+
+  if (state == RAMP) then (ramp)
+    :Commanded_Dutycycle = RAMP_DUTYCYCLE;
+    :tgt_timing = Get_OL_Timing( Commanded_Dutycycle );
+    :timing_ramp_control( tgt_timing );
+
+  elseif (state == RUNNING) then
+    :Commanded_Dutycycle = get_DC_from_UI_speed();
+    note right: convert/scale UI speed to PWM DC
+
+    if (closed_loop_operation) then
+      :tgt_timing = TBD();
+    else
+      :tgt_timing = Get_OL_Timing( Commanded_Dutycycle );
+      note right: fall back to timing table
+    endif
+    :timing_ramp_control( tgt_timing );
+  endif
+
+
+  stop
+@enduml
+@startuml inline_umlgraph_14.png
+  start
+    :u16 = BLDC_OL_comm_tm;
+    :u16 = BLDC_OL_comm_tm;
+    note right: grab current timing value
+
+    if (u16 > tgt_commutation_per) then (yes)
+    if (u16 > tgt_commutation_per) then (yes)
+        :u16 -= ONE_RAMP_UNIT;
+        :u16 -= ONE_RAMP_UNIT;
+        if (u16 < tgt_commutation_per) then (yes)
+        if (u16 < tgt_commutation_per) then (yes)
+            :u16 = tgt_commutation_per;
+            :u16 = tgt_commutation_per;
+            note left: undershoot, clamp to target
+        endif
+        :BLDC_OL_comm_tm  = u16;
+        :BLDC_OL_comm_tm  = u16;
+    elseif (u16 < tgt_commutation_per) then (else)
+    elseif (u16 < tgt_commutation_per) then (else)
+        :u16 += ONE_RAMP_UNIT;
+        :u16 += ONE_RAMP_UNIT;
+        if (u16 > tgt_commutation_per) then (yes)
+        if (u16 > tgt_commutation_per) then (yes)
+            :u16 = tgt_commutation_per;
+            :u16 = tgt_commutation_per;
+            note left: overshoot clamp to target
+        endif
+        :BLDC_OL_comm_tm  = u16;
+        :BLDC_OL_comm_tm  = u16;
+    endif
+  stop
+@enduml
+@startuml inline_umlgraph_15.png
+  start
+
+  if (state == RAMP) then (ramp)
+    :Commanded_Dutycycle = RAMP_DUTYCYCLE;
+    :tgt_timing = Get_OL_Timing( Commanded_Dutycycle );
+    :timing_ramp_control( tgt_timing );
+
+  elseif (state == RUNNING) then
+    :Commanded_Dutycycle = get_DC_from_UI_speed();
+    note right: convert/scale UI speed to PWM DC
+
+    if (closed_loop_operation) then
+      :tgt_timing = TBD();
+    else
+      :tgt_timing = Get_OL_Timing( Commanded_Dutycycle );
+      note right: fall back to timing table
+    endif
+    :timing_ramp_control( tgt_timing );
+  endif
+
+
+  stop
+@enduml
+@startuml inline_umlgraph_16.png
+[*] -> RESET: powerup
+RESET -down-> READY: [UI_speed > 0]
+READY -down-> RAMP: [UI_speed > _RampupDC_]
+RAMP -down-> RUNNING: [ BLDC_OL_comm_tm <= Get_OL_Timing( _RampupDC_ )] 
+RUNNING -> RESET: BLDC_Stop()
+RUNNING -> FAULT
+FAULT -> RESET : BLDC_Stop()
+@enduml
+@startuml inline_umlgraph_17.png
+[*] -> RESET: powerup
+RESET -down-> READY: [UI_speed > 0]
+READY -down-> RAMP: [UI_speed > _RampupDC_]
+RAMP -down-> RUNNING: [ BLDC_OL_comm_tm <= Get_OL_Timing( _RampupDC_ )] 
+RUNNING -> RESET: BLDC_Stop()
+RUNNING -> FAULT
+FAULT -> RESET : BLDC_Stop()
+@enduml
+@startuml inline_umlgraph_18.png
+stm8_isr -> Driver: Driver_update()
+Driver ->  BLDC_sm: BLDC_update()
+Driver -> BG_task: Task_set_ready() 
+@enduml
+@startuml inline_umlgraph_19.png
+stm8_isr -> Driver: step()
+Driver -> Stepper: Step()
+Stepper -->  Driver: Driver_get_ADC()
+Stepper ->  MCU_stm8: Phase_control()
+@enduml
+@startuml inline_umlgraph_20.png
+Sequencer -> stm8s_TIM2: TIM2_CCxCmd( CHANNEL_x, ENABLE )
+stm8s_TIM2 -> stm8_isr: TIM2_UPD_OVF_BRK_IRQHandler()
+stm8_isr -> stm8s_ADC1: ADC1_StartConversion();
+stm8_isr -> stm8s_ADC1: ADC1_StartConversion();
+stm8s_ADC1 -> stm8_isr: ADC1_IRQHandler()
+stm8s_ADC1 -> stm8_isr: ADC1_IRQHandler()
+stm8_isr -> Driver: On_ADC_Conversion_Rdy()
+@enduml
+@startuml inline_umlgraph_21.png
+stm8_isr -> Driver: Driver_update()
+Driver ->  BLDC_sm: BLDC_update()
+Driver -> BG_task: Task_set_ready() 
+@enduml
+@startuml inline_umlgraph_22.png
+stm8_isr -> Driver: step()
+Driver -> Stepper: Step()
+Stepper -->  Driver: Driver_get_ADC()
+Stepper ->  MCU_stm8: Phase_control()
+@enduml
+@startuml inline_umlgraph_23.png
+Sequencer -> stm8s_TIM2: TIM2_CCxCmd( CHANNEL_x, ENABLE )
+stm8s_TIM2 -> stm8_isr: TIM2_UPD_OVF_BRK_IRQHandler()
+stm8_isr -> stm8s_ADC1: ADC1_StartConversion();
+stm8_isr -> stm8s_ADC1: ADC1_StartConversion();
+stm8s_ADC1 -> stm8_isr: ADC1_IRQHandler()
+stm8s_ADC1 -> stm8_isr: ADC1_IRQHandler()
+stm8_isr -> Driver: On_ADC_Conversion_Rdy()
+@enduml
+@startuml inline_umlgraph_24.png
+== Commutation Time + 15 ==
+== Commutation Time + 15 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [0]
+Driver -> stm8s_ADC1: acquire back-EMF sample [0]
+
+== Commutation Time + 30 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [1]
+Driver -> stm8s_ADC1: acquire back-EMF sample [1]
+
+== Commutation Time + 45 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [2]
+Driver -> stm8s_ADC1: acquire back-EMF sample [2]
+
+== Commutation Time + 60 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [3]
+Driver -> stm8s_ADC1: acquire back-EMF sample [3]
+Driver -> Driver: average 4 samples
+@enduml
+@startuml inline_umlgraph_25.png
+== Commutation Time + 15 ==
+== Commutation Time + 15 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [0]
+Driver -> stm8s_ADC1: acquire back-EMF sample [0]
+
+== Commutation Time + 30 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [1]
+Driver -> stm8s_ADC1: acquire back-EMF sample [1]
+
+== Commutation Time + 45 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [2]
+Driver -> stm8s_ADC1: acquire back-EMF sample [2]
+
+== Commutation Time + 60 ==
+
+Driver -> stm8s_ADC1: acquire back-EMF sample [3]
+Driver -> stm8s_ADC1: acquire back-EMF sample [3]
+Driver -> Driver: average 4 samples
+@enduml
