@@ -1,6 +1,5 @@
 var driver_8h =
 [
-    [ "DC_HALF_REF", "driver_8h.html#a6973a12dee7b9d1728044bb193697d6f", null ],
     [ "Driver_Get_ADC", "group__driver.html#gac0aecbe5392b4e4f433b190d0a981a83", null ],
     [ "Driver_Get_Back_EMF_Avg", "driver_8h.html#aa9887da53b701d641160f2feaabcd859", null ],
     [ "Driver_get_pulse_dur", "group__driver.html#ga1ce36745c67894761abfa47d4f51f587", null ],

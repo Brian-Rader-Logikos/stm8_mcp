@@ -8,8 +8,6 @@ var group__faultm =
       [ "enabled", "structfault__matrix.html#ad09c7ebb406d1f82560efe14ce1bf35c", null ],
       [ "state", "structfault__matrix.html#a3cdbc8551542d019e251fb9718b1a33f", null ]
     ] ],
-    [ "FAULT_BUCKET_BITS", "group__faultm.html#gad3923abf0cfeef2f5aba345f95388344", null ],
-    [ "NR_DEFINED_FAULTS", "group__faultm.html#ga369abb0a7bd0c452a340a97be04d291b", null ],
     [ "faultm_mat_t", "group__faultm.html#ga5985774dafc2ea1d86ddfc17b5757725", null ],
     [ "faultm_enable_t", "group__faultm.html#gae262d660a79a1fb9489f222289c98e81", null ],
     [ "faultm_state_t", "group__faultm.html#ga4975d8cb9adbe12c350ecb749c9bf60f", null ],

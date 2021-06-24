@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('pwm__stm8s_8h_source.html',''); initRe
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// PD4 set LO</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="pwm__stm8s_8h.html#a3894abeca7c9f746891cdd0257fbf0e8">   83</a></span>&#160;<span class="preprocessor">#define PWM_PhA_OUTP_LO( )                              \</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define PWM_PhA_OUTP_LO( )                              \</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">    SDc_PWM_PORT-&gt;ODR &amp;= (uint8_t) ( ~SDa_PWM_PIN );    \</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">    SDc_PWM_PORT-&gt;DDR |=  SDa_PWM_PIN;                   \</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">    SDc_PWM_PORT-&gt;CR1 |=  SDa_PWM_PIN;</span></div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('pwm__stm8s_8h_source.html',''); initRe
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">    SDc_PWM_PORT-&gt;CR1 |=  SDc_PWM_PIN;</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="pwm__stm8s_8h.html#a4ccef4c932dc7fc5080d0a40c48e8da7">  104</a></span>&#160;<span class="preprocessor">#define PWM_PhA_HB_ENABLE( ) \</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define PWM_PhA_HB_ENABLE( ) \</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    SDa_SD_PORT-&gt;ODR |=   SDa_SD_PIN;</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#define PWM_PhB_HB_ENABLE( ) \</span></div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('pwm__stm8s_8h_source.html',''); initRe
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">    SDc_SD_PORT-&gt;ODR |=   SDc_SD_PIN;</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// casts applied in order to quash warnings (bit inversion causes sign extension to to 16-bit)</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="pwm__stm8s_8h.html#ad28328dd73d49cb87a73b37c74026764">  117</a></span>&#160;<span class="preprocessor">#define PWM_PhA_HB_DISABLE( ) \</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#define PWM_PhA_HB_DISABLE( ) \</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">    SDa_SD_PORT-&gt;ODR &amp;=  (uint8_t) ( ~SDa_SD_PIN );</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#define PWM_PhB_HB_DISABLE( ) \</span></div>

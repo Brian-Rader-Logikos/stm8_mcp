@@ -1,10 +1,5 @@
 var driver_8c =
 [
-    [ "DC_HALF_REF", "group__driver.html#ga6973a12dee7b9d1728044bb193697d6f", null ],
-    [ "FOUR_SECTORS", "group__driver.html#ga12325f20c00ac4b36df2980efa8538b9", null ],
-    [ "GET_BACK_EMF_ADC", "group__driver.html#ga6f78efa2034990be16c52c9d2f26883e", null ],
-    [ "MID_ADC", "group__driver.html#ga7fefae5f3557446a53fd8cbbb3731338", null ],
-    [ "PH0_ADC_TBUF_SZ", "group__driver.html#gae5bef51eab14773cf15110139a458209", null ],
     [ "Driver_Get_ADC", "group__driver.html#gac0aecbe5392b4e4f433b190d0a981a83", null ],
     [ "Driver_get_pulse_dur", "group__driver.html#ga1ce36745c67894761abfa47d4f51f587", null ],
     [ "Driver_get_pulse_perd", "group__driver.html#ga5f07548f9b4c8f663480df531985efd2", null ],

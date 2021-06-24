@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('group___b_l_d_c__sm.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">BLDC State</div>  </div>
@@ -105,33 +104,6 @@ $(document).ready(function(){initNavTree('group___b_l_d_c__sm.html',''); initRes
 <p>BLDC state management and timing control.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga0595a94094230d3f06c8cd9e3dadb28f"><td class="memItemLeft" align="right" valign="top"><a id="ga0595a94094230d3f06c8cd9e3dadb28f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_0PCNT</b>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga0595a94094230d3f06c8cd9e3dadb28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60b4946bf656d16b918181bbf88dd91b"><td class="memItemLeft" align="right" valign="top"><a id="ga60b4946bf656d16b918181bbf88dd91b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_X_PCNT</b>(_PCNT_)&#160;&#160;&#160;(uint16_t)( ( _PCNT_ * PWM_100PCNT ) / 100.0 )</td></tr>
-<tr class="separator:ga60b4946bf656d16b918181bbf88dd91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e092d5aae8aaebc1438be005727b2a0"><td class="memItemLeft" align="right" valign="top"><a id="ga1e092d5aae8aaebc1438be005727b2a0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_DC_RAMPUP</b>&#160;&#160;&#160;PWM_X_PCNT( 12.0 )</td></tr>
-<tr class="separator:ga1e092d5aae8aaebc1438be005727b2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2031a9bb9789d5df8e8429f31dcf354a"><td class="memItemLeft" align="right" valign="top"><a id="ga2031a9bb9789d5df8e8429f31dcf354a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_DC_SHUTOFF</b>&#160;&#160;&#160;PWM_X_PCNT( 8.0 )</td></tr>
-<tr class="separator:ga2031a9bb9789d5df8e8429f31dcf354a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66caf268d5c038355ed120698dc94227"><td class="memItemLeft" align="right" valign="top"><a id="ga66caf268d5c038355ed120698dc94227"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_DC_CTRL_MODE</b>&#160;&#160;&#160;PWM_DC_RAMPUP</td></tr>
-<tr class="separator:ga66caf268d5c038355ed120698dc94227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12e210583839d27be26175dce7442b2b"><td class="memItemLeft" align="right" valign="top"><a id="ga12e210583839d27be26175dce7442b2b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLDC_OL_TM_LO_SPD</b>&#160;&#160;&#160;(0x0B00 * CTIME_SCALAR)</td></tr>
-<tr class="separator:ga12e210583839d27be26175dce7442b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa707e14d6e5ce78e7467baee544d2636"><td class="memItemLeft" align="right" valign="top"><a id="gaa707e14d6e5ce78e7467baee544d2636"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LUDICROUS_SPEED</b>&#160;&#160;&#160;(0x006F * CTIME_SCALAR)</td></tr>
-<tr class="separator:gaa707e14d6e5ce78e7467baee544d2636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3dd0155ef076bd479e4623674d846a4"><td class="memItemLeft" align="right" valign="top"><a id="gad3dd0155ef076bd479e4623674d846a4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLDC_ONE_RAMP_UNIT</b>&#160;&#160;&#160;(1 * CTRL_RATEM * CTIME_SCALAR)</td></tr>
-<tr class="separator:gad3dd0155ef076bd479e4623674d846a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga6af60a6d9b9c041b0b35af96cb8cd00e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga6af60a6d9b9c041b0b35af96cb8cd00e">BL_reset</a> (void)</td></tr>

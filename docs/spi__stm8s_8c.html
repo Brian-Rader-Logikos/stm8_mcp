@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('spi__stm8s_8c.html',''); initResizable
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">spi_stm8s.c File Reference</div>  </div>
 </div><!--header-->
@@ -101,24 +103,23 @@ $(document).ready(function(){initNavTree('spi__stm8s_8c.html',''); initResizable
 
 <p>This file contains the main function for the BLDC motor control.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;ctype.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for spi_stm8s.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="spi__stm8s_8c__incl.png" border="0" usemap="#aspi__stm8s_8c" alt=""/></div>
-<map name="aspi__stm8s_8c" id="aspi__stm8s_8c">
-<area shape="rect" title="This file contains the main function for the BLDC motor control." alt="" coords="121,5,215,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,67,107"/>
-<area shape="rect" title=" " alt="" coords="91,80,157,107"/>
-<area shape="rect" title=" " alt="" coords="181,80,246,107"/>
-<area shape="rect" href="system_8h.html" title=" " alt="" coords="270,80,346,107"/>
-<area shape="rect" title=" " alt="" coords="273,155,343,181"/>
-</map>
-</div>
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga3f769d5986c9908cbafe4fc88237242c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comms.html#ga3f769d5986c9908cbafe4fc88237242c">SPI_write</a> (uint8_t data)</td></tr>
+<tr class="memdesc:ga3f769d5986c9908cbafe4fc88237242c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a byte onto SPI bus.  <a href="group__comms.html#ga3f769d5986c9908cbafe4fc88237242c">More...</a><br /></td></tr>
+<tr class="separator:ga3f769d5986c9908cbafe4fc88237242c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8659f8495774df2bbf5f10f47224bb7e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comms.html#ga8659f8495774df2bbf5f10f47224bb7e">SPI_read</a> (void)</td></tr>
+<tr class="memdesc:ga8659f8495774df2bbf5f10f47224bb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a byte from SPI bus.  <a href="group__comms.html#ga8659f8495774df2bbf5f10f47224bb7e">More...</a><br /></td></tr>
+<tr class="separator:ga8659f8495774df2bbf5f10f47224bb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf767bd2a01130b1d7b907b9e8f4cd81"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comms.html#gabf767bd2a01130b1d7b907b9e8f4cd81">SPI_read_write</a> (uint8_t data)</td></tr>
+<tr class="memdesc:gabf767bd2a01130b1d7b907b9e8f4cd81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read/write byte on SPI bus.  <a href="group__comms.html#gabf767bd2a01130b1d7b907b9e8f4cd81">More...</a><br /></td></tr>
+<tr class="separator:gabf767bd2a01130b1d7b907b9e8f4cd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad9ffc44c4f45542c089a83ccf3d2386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comms.html#gaad9ffc44c4f45542c089a83ccf3d2386">SPI_controld</a> (void)</td></tr>
+<tr class="memdesc:gaad9ffc44c4f45542c089a83ccf3d2386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level task for SPI controller (master) task.  <a href="group__comms.html#gaad9ffc44c4f45542c089a83ccf3d2386">More...</a><br /></td></tr>
+<tr class="separator:gaad9ffc44c4f45542c089a83ccf3d2386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file contains the main function for the BLDC motor control. </p>
 <dl class="section author"><dt>Author</dt><dd>Neidermeier </dd></dl>
 <dl class="section version"><dt>Version</dt><dd></dd></dl>

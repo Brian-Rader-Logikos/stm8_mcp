@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('group__sequencer.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -106,18 +105,6 @@ $(document).ready(function(){initNavTree('group__sequencer.html',''); initResiza
 <p>Coordinates commutation switching sequence.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sequencer.html#gacc03b18fb48e730d3c1a66451bd7bb06">BACK_EMF_PLAUS_THR</a>&#160;&#160;&#160;0x03F8</td></tr>
-<tr class="memdesc:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plausibility of back-EMF measurement: the threshold (somewhat arbitrary) is based on taking the average of the latest back-EMF leading-side and trailing- side measurements, i.e.  <a href="group__sequencer.html#gacc03b18fb48e730d3c1a66451bd7bb06">More...</a><br /></td></tr>
-<tr class="separator:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11f2af0e8c8e50d26ead5b562743df4b"><td class="memItemLeft" align="right" valign="top"><a id="ga11f2af0e8c8e50d26ead5b562743df4b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALE_64_LSH</b>&#160;&#160;&#160;6</td></tr>
-<tr class="separator:ga11f2af0e8c8e50d26ead5b562743df4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09a456782995841bd7f3e678cf3caa8c"><td class="memItemLeft" align="right" valign="top"><a id="ga09a456782995841bd7f3e678cf3caa8c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALE_64_ONE</b>&#160;&#160;&#160;(1 &lt;&lt; SCALE_64_LSH)</td></tr>
-<tr class="separator:ga09a456782995841bd7f3e678cf3caa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gaeacc39aec1757fb1f42ecb7f2115963c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sequencer.html#gaeacc39aec1757fb1f42ecb7f2115963c">step_ptr_t</a>) (void)</td></tr>
@@ -149,24 +136,6 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Coordinates commutation switching sequence. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacc03b18fb48e730d3c1a66451bd7bb06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacc03b18fb48e730d3c1a66451bd7bb06">&#9670;&nbsp;</a></span>BACK_EMF_PLAUS_THR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BACK_EMF_PLAUS_THR&#160;&#160;&#160;0x03F8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Plausibility of back-EMF measurement: the threshold (somewhat arbitrary) is based on taking the average of the latest back-EMF leading-side and trailing- side measurements, i.e. </p>
-<p>: [ (Back_EMF_Falling_PhX + Back_EMF_Riseing_PhX) &gt; BACK_EMF_PLAUS_THR ] The open-loop ramp-to speed should ensure this condition. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gaeacc39aec1757fb1f42ecb7f2115963c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeacc39aec1757fb1f42ecb7f2115963c">&#9670;&nbsp;</a></span>step_ptr_t</h2>

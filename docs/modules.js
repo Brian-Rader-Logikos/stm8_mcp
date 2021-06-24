@@ -7,6 +7,6 @@ var modules =
     [ "Platform STM8S", "group___m_c_u.html", "group___m_c_u" ],
     [ "Motor Model Data", "group__mdata.html", "group__mdata" ],
     [ "Commutation Sequencer", "group__sequencer.html", "group__sequencer" ],
-    [ "Communication Interface", "group__comms.html", null ],
+    [ "Communication Interface", "group__comms.html", "group__comms" ],
     [ "Template_Project", "group___template___project.html", "group___template___project" ]
 ];

@@ -1,6 +1,5 @@
 var group__sequencer =
 [
-    [ "BACK_EMF_PLAUS_THR", "group__sequencer.html#gacc03b18fb48e730d3c1a66451bd7bb06", null ],
     [ "step_ptr_t", "group__sequencer.html#gaeacc39aec1757fb1f42ecb7f2115963c", null ],
     [ "Seq_Get_bemfF", "group__sequencer.html#ga9f6c1b591db3540732c7a1058622b8b8", null ],
     [ "Seq_Get_bemfR", "group__sequencer.html#gac0ec64708d29e474c29429471fd81aa9", null ],

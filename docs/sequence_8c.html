@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('sequence_8c.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -105,37 +104,7 @@ $(document).ready(function(){initNavTree('sequence_8c.html',''); initResizable()
 
 <p>Coordinates commutation switching sequence.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="pwm__stm8s_8h_source.html">pwm_stm8s.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="driver_8h_source.html">driver.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="bldc__sm_8h_source.html">bldc_sm.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for sequence.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="sequence_8c__incl.png" border="0" usemap="#asequence_8c" alt=""/></div>
-<map name="asequence_8c" id="asequence_8c">
-<area shape="rect" title="Coordinates commutation switching sequence." alt="" coords="157,5,247,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,73,107"/>
-<area shape="rect" href="pwm__stm8s_8h.html" title="BLDC motor control &#45; PWM, STM8s specific (TIM2, TIM1 alternate w/ bd.mods.)" alt="" coords="97,80,200,107"/>
-<area shape="rect" href="driver_8h.html" title="Support functions for the BLDC motor control." alt="" coords="224,80,287,107"/>
-<area shape="rect" href="bldc__sm_8h.html" title="state&#45;manager for BLDC" alt="" coords="311,80,394,107"/>
-<area shape="rect" title=" " alt="" coords="167,229,237,256"/>
-<area shape="rect" href="system_8h.html" title=" " alt="" coords="209,155,285,181"/>
-</map>
-</div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sequencer.html#gacc03b18fb48e730d3c1a66451bd7bb06">BACK_EMF_PLAUS_THR</a>&#160;&#160;&#160;0x03F8</td></tr>
-<tr class="memdesc:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plausibility of back-EMF measurement: the threshold (somewhat arbitrary) is based on taking the average of the latest back-EMF leading-side and trailing- side measurements, i.e.  <a href="group__sequencer.html#gacc03b18fb48e730d3c1a66451bd7bb06">More...</a><br /></td></tr>
-<tr class="separator:gacc03b18fb48e730d3c1a66451bd7bb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga11f2af0e8c8e50d26ead5b562743df4b"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALE_64_LSH</b>&#160;&#160;&#160;6</td></tr>
-<tr class="separator:ga11f2af0e8c8e50d26ead5b562743df4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09a456782995841bd7f3e678cf3caa8c"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALE_64_ONE</b>&#160;&#160;&#160;(1 &lt;&lt; SCALE_64_LSH)</td></tr>
-<tr class="separator:ga09a456782995841bd7f3e678cf3caa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gaeacc39aec1757fb1f42ecb7f2115963c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sequencer.html#gaeacc39aec1757fb1f42ecb7f2115963c">step_ptr_t</a>) (void)</td></tr>

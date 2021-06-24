@@ -96,7 +96,6 @@ $(document).ready(function(){initNavTree('faultm_8c.html',''); initResizable(); 
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -108,45 +107,12 @@ $(document).ready(function(){initNavTree('faultm_8c.html',''); initResizable(); 
 
 <p>Fault manager for BLDC.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="faultm_8h_source.html">faultm.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for faultm.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="faultm_8c__incl.png" border="0" usemap="#afaultm_8c" alt=""/></div>
-<map name="afaultm_8c" id="afaultm_8c">
-<area shape="rect" title="Fault manager for BLDC." alt="" coords="49,5,117,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,71,107"/>
-<area shape="rect" href="faultm_8h.html" title="state&#45;manager for BLDC" alt="" coords="95,80,163,107"/>
-<area shape="rect" href="system_8h.html" title=" " alt="" coords="91,155,167,181"/>
-<area shape="rect" title=" " alt="" coords="94,229,163,256"/>
-</map>
-</div>
-</div><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfault__matrix.html">fault_matrix</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fault tracking table.  <a href="structfault__matrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gad3923abf0cfeef2f5aba345f95388344"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">FAULT_BUCKET_BITS</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:gad3923abf0cfeef2f5aba345f95388344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization value for fault counter bucket.  <a href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">More...</a><br /></td></tr>
-<tr class="separator:gad3923abf0cfeef2f5aba345f95388344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa88c411de2d34d1b9d0dce6da63f36a7"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_MASK</b>&#160;&#160;&#160;( ( 1 &lt;&lt; <a class="el" href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">FAULT_BUCKET_BITS</a> ) - 1)</td></tr>
-<tr class="separator:gaa88c411de2d34d1b9d0dce6da63f36a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1670168c530b71918b9d3a67d9df863"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_LIM</b>&#160;&#160;&#160;FAULT_BUCKET_MASK</td></tr>
-<tr class="separator:gab1670168c530b71918b9d3a67d9df863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51919a630317946f8a913b3c3ceae19e"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_INI</b>&#160;&#160;&#160;(48 - 1)</td></tr>
-<tr class="separator:ga51919a630317946f8a913b3c3ceae19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga369abb0a7bd0c452a340a97be04d291b"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#ga369abb0a7bd0c452a340a97be04d291b">NR_DEFINED_FAULTS</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:ga369abb0a7bd0c452a340a97be04d291b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fault status word is 8-bits wide. <br /></td></tr>
-<tr class="separator:ga369abb0a7bd0c452a340a97be04d291b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>

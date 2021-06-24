@@ -1,6 +1,5 @@
 var bldc__sm_8h =
 [
-    [ "PWM_BL_STOP", "bldc__sm_8h.html#a20f1439b2486a9249d725cc28a2e1bb1", null ],
     [ "BL_RUNSTATE_t", "bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5a", [
       [ "BL_NOT_RUNNING", "bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5aa6f33fe496b7ab8215c978660af885a02", null ],
       [ "BL_IS_RUNNING", "bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5aa1f4ad19755d1dee13cb3f625ebf591c9", null ]

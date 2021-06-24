@@ -94,81 +94,12 @@ $(document).ready(function(){initNavTree('system_8h.html',''); initResizable(); 
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">system.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stm8s.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for system.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="system_8h__incl.png" border="0" usemap="#asystem_8h" alt=""/></div>
-<map name="asystem_8h" id="asystem_8h">
-<area shape="rect" title=" " alt="" coords="5,5,81,32"/>
-<area shape="rect" title=" " alt="" coords="9,80,78,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="system_8h__dep__incl.png" border="0" usemap="#asystem_8hdep" alt=""/></div>
-<map name="asystem_8hdep" id="asystem_8hdep">
-<area shape="rect" title=" " alt="" coords="509,5,585,32"/>
-<area shape="rect" href="mcu__stm8s_8c.html" title="STM8S platform and peripheral configuration." alt="" coords="287,229,388,256"/>
-<area shape="rect" href="mdata_8c.html" title="Motor data table lookup." alt="" coords="40,80,110,107"/>
-<area shape="rect" href="pwm__stm8s_8c.html" title="BLDC motor control &#45; PWM, STM8s specific." alt="" coords="197,155,300,181"/>
-<area shape="rect" href="spi__stm8s_8c.html" title="This file contains the main function for the BLDC motor control." alt="" coords="184,80,278,107"/>
-<area shape="rect" href="stm8s__it_8c.html" title="Main Interrupt Service Routines. This file provides template for all peripherals interrupt service ro..." alt="" coords="39,155,122,181"/>
-<area shape="rect" href="bldc__sm_8h.html" title="state&#45;manager for BLDC" alt="" coords="934,80,1016,107"/>
-<area shape="rect" href="driver_8h.html" title="Support functions for the BLDC motor control." alt="" coords="302,80,365,107"/>
-<area shape="rect" href="faultm_8h.html" title="state&#45;manager for BLDC" alt="" coords="568,80,636,107"/>
-<area shape="rect" href="mcu__stm8s_8h_source.html" title=" " alt="" coords="634,155,735,181"/>
-<area shape="rect" href="mdata_8h.html" title=" " alt="" coords="714,80,783,107"/>
-<area shape="rect" href="parameter_8h.html" title=" " alt="" coords="1130,155,1220,181"/>
-<area shape="rect" href="per__task_8h.html" title="This file contains the main function for the BLDC motor control." alt="" coords="1175,80,1258,107"/>
-<area shape="rect" href="pwm__stm8s_8h.html" title="BLDC motor control &#45; PWM, STM8s specific (TIM2, TIM1 alternate w/ bd.mods.)" alt="" coords="441,80,544,107"/>
-<area shape="rect" href="sequence_8h.html" title=" " alt="" coords="816,80,905,107"/>
-<area shape="rect" href="_b_l_d_c__sm_8c.html" title="state&#45;manager for BLDC" alt="" coords="760,155,852,181"/>
-<area shape="rect" href="driver_8c.html" title="Interface functions for motor control." alt="" coords="941,229,1004,256"/>
-<area shape="rect" href="main_8c.html" title="Application entry point." alt="" coords="1062,229,1123,256"/>
-<area shape="rect" href="per__task_8c.html" title="Background task / periodic task." alt="" coords="643,229,726,256"/>
-<area shape="rect" href="sequence_8c.html" title="Coordinates commutation switching sequence." alt="" coords="376,155,465,181"/>
-<area shape="rect" href="faultm_8c.html" title="Fault manager for BLDC." alt="" coords="541,155,609,181"/>
-</map>
-</div>
-</div>
+
 <p><a href="system_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a4ee9cecc5317b51970eb146fbd25b982"><td class="memItemLeft" align="right" valign="top"><a id="a4ee9cecc5317b51970eb146fbd25b982"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system_8h.html#a4ee9cecc5317b51970eb146fbd25b982">SPI_RX_BUF_SZ</a>&#160;&#160;&#160;16</td></tr>
-<tr class="memdesc:a4ee9cecc5317b51970eb146fbd25b982"><td class="mdescLeft">&#160;</td><td class="mdescRight">the STM8 variant is defined in the project file, along with the appropriate compiler settings for the particular MCU (memory model etc.) Here is defined the particular platform, where the particular MCU and pin routing determines how the peripherals and GPIO pins are allocated. <br /></td></tr>
-<tr class="separator:a4ee9cecc5317b51970eb146fbd25b982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ec81355ea6544c654ccdbdce7ca99c"><td class="memItemLeft" align="right" valign="top"><a id="a34ec81355ea6544c654ccdbdce7ca99c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CLOCK_16</b></td></tr>
-<tr class="separator:a34ec81355ea6544c654ccdbdce7ca99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa950753f24b1afd6cf08b457231f50e2"><td class="memItemLeft" align="right" valign="top"><a id="aa950753f24b1afd6cf08b457231f50e2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYS_RATE_MULT</b>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:aa950753f24b1afd6cf08b457231f50e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078bbf62ccbb45ddfbaab65ba09dac1d"><td class="memItemLeft" align="right" valign="top"><a id="a078bbf62ccbb45ddfbaab65ba09dac1d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CTRL_RATEM</b>&#160;&#160;&#160;SYS_RATE_MULT</td></tr>
-<tr class="separator:a078bbf62ccbb45ddfbaab65ba09dac1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a01ff8e48946d1b1dd26d1cbf87e22"><td class="memItemLeft" align="right" valign="top"><a id="a76a01ff8e48946d1b1dd26d1cbf87e22"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CTIME_SCALAR</b>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:a76a01ff8e48946d1b1dd26d1cbf87e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ac1e4c0453fe686a6884b11c63504d"><td class="memItemLeft" align="right" valign="top"><a id="ac3ac1e4c0453fe686a6884b11c63504d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_8K</b></td></tr>
-<tr class="separator:ac3ac1e4c0453fe686a6884b11c63504d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6740b8e4e8b3a83c3973769608e22ea7"><td class="memItemLeft" align="right" valign="top"><a id="a6740b8e4e8b3a83c3973769608e22ea7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM2_PWM_PD</b>&#160;&#160;&#160;250</td></tr>
-<tr class="separator:a6740b8e4e8b3a83c3973769608e22ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa67087a543432155012bb6574e02020a"><td class="memItemLeft" align="right" valign="top"><a id="aa67087a543432155012bb6574e02020a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_100PCNT</b>&#160;&#160;&#160;TIM2_PWM_PD</td></tr>
-<tr class="separator:aa67087a543432155012bb6574e02020a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd></dd></dl>
 <dl class="section version"><dt>Version</dt><dd></dd></dl>

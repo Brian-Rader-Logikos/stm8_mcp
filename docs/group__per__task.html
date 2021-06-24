@@ -96,7 +96,6 @@ $(document).ready(function(){initNavTree('group__per__task.html',''); initResiza
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -114,39 +113,6 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type for the key handler table.  <a href="structui__key__handler__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga7918d991717dac5b0ede01b98dc777c7"><td class="memItemLeft" align="right" valign="top"><a id="ga7918d991717dac5b0ede01b98dc777c7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TRIM_DEFAULT</b>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga7918d991717dac5b0ede01b98dc777c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa0fe1b1198ae8d01b907f5cd59c9bb9e"><td class="memItemLeft" align="right" valign="top"><a id="gaa0fe1b1198ae8d01b907f5cd59c9bb9e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>V_SHUTDOWN_THR</b>&#160;&#160;&#160;0x0340</td></tr>
-<tr class="separator:gaa0fe1b1198ae8d01b907f5cd59c9bb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa24fff74be7b5ef2e2179f7ddaa6cb5a"><td class="memItemLeft" align="right" valign="top"><a id="gaa24fff74be7b5ef2e2179f7ddaa6cb5a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOW_SPEED_THR</b>&#160;&#160;&#160;20</td></tr>
-<tr class="separator:gaa24fff74be7b5ef2e2179f7ddaa6cb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga98cbeb508230dd713f24cfec5b00c265"><td class="memItemLeft" align="right" valign="top"><a id="ga98cbeb508230dd713f24cfec5b00c265"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_SIZE_K_LUT</b>&#160;&#160;&#160;( sizeof( ui_keyhandlers_tb ) / sizeof( <a class="el" href="structui__key__handler__t.html">ui_key_handler_t</a> ) )</td></tr>
-<tr class="separator:ga98cbeb508230dd713f24cfec5b00c265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef2f75d25ba35939049c7ced2098e071"><td class="memItemLeft" align="right" valign="top"><a id="gaef2f75d25ba35939049c7ced2098e071"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_GET_KEY_CODE</b>(_INDEX_)&#160;&#160;&#160;ui_keyhandlers_tb[ _INDEX_ ].key_code</td></tr>
-<tr class="separator:gaef2f75d25ba35939049c7ced2098e071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga85295ed1173f5e7f3e06d532edca04f8"><td class="memItemLeft" align="right" valign="top"><a id="ga85295ed1173f5e7f3e06d532edca04f8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>_GET_UI_HDLRP</b>(_INDEX_)&#160;&#160;&#160;ui_keyhandlers_tb[ _INDEX_ ].phandler</td></tr>
-<tr class="separator:ga85295ed1173f5e7f3e06d532edca04f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8aac5238b13c183a9a176343f45002fd"><td class="memItemLeft" align="right" valign="top"><a id="ga8aac5238b13c183a9a176343f45002fd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RF_PCNT_ZERO</b>&#160;&#160;&#160;0x044A</td></tr>
-<tr class="separator:ga8aac5238b13c183a9a176343f45002fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e8e05f415593c0c17964dec4104d4d3"><td class="memItemLeft" align="right" valign="top"><a id="ga0e8e05f415593c0c17964dec4104d4d3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RF_PCNT_100</b>&#160;&#160;&#160;0x0768</td></tr>
-<tr class="separator:ga0e8e05f415593c0c17964dec4104d4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga81363b633ecc8641187415bbfdb991da"><td class="memItemLeft" align="right" valign="top"><a id="ga81363b633ecc8641187415bbfdb991da"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RF_RANGE</b>&#160;&#160;&#160;(RF_PCNT_100 - RF_PCNT_ZERO)</td></tr>
-<tr class="separator:ga81363b633ecc8641187415bbfdb991da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7ed87b577a3abc764c9576c9551123b"><td class="memItemLeft" align="right" valign="top"><a id="gac7ed87b577a3abc764c9576c9551123b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RF_NORDO_THR</b>&#160;&#160;&#160;0x3000</td></tr>
-<tr class="separator:gac7ed87b577a3abc764c9576c9551123b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga1cd19b7b0bc0db70e4e07d540cf3e50e"><td class="memItemLeft" align="right" valign="top"><a id="ga1cd19b7b0bc0db70e4e07d540cf3e50e"></a>
@@ -160,9 +126,14 @@ typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="ga06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>SPD_PLUS</b> = '.'
+<tr class="memitem:ga06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="ga06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<b>COMM_PLUS</b> = ']'
+, <b>COMM_MINUS</b> = '['
+, <b>SPD_PLUS</b> = '.'
 , <b>SPD_MINUS</b> = ','
-, <b>M_STOP</b> = ' '
+, <br />
+&#160;&#160;<b>M_STOP</b> = ' '
+<br />
  }</td></tr>
 <tr class="separator:ga06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">

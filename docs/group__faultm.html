@@ -96,7 +96,6 @@ $(document).ready(function(){initNavTree('group__faultm.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -114,25 +113,6 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfault__matrix.html">fault_matrix</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fault tracking table.  <a href="structfault__matrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gad3923abf0cfeef2f5aba345f95388344"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">FAULT_BUCKET_BITS</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:gad3923abf0cfeef2f5aba345f95388344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization value for fault counter bucket.  <a href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">More...</a><br /></td></tr>
-<tr class="separator:gad3923abf0cfeef2f5aba345f95388344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa88c411de2d34d1b9d0dce6da63f36a7"><td class="memItemLeft" align="right" valign="top"><a id="gaa88c411de2d34d1b9d0dce6da63f36a7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_MASK</b>&#160;&#160;&#160;( ( 1 &lt;&lt; <a class="el" href="group__faultm.html#gad3923abf0cfeef2f5aba345f95388344">FAULT_BUCKET_BITS</a> ) - 1)</td></tr>
-<tr class="separator:gaa88c411de2d34d1b9d0dce6da63f36a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1670168c530b71918b9d3a67d9df863"><td class="memItemLeft" align="right" valign="top"><a id="gab1670168c530b71918b9d3a67d9df863"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_LIM</b>&#160;&#160;&#160;FAULT_BUCKET_MASK</td></tr>
-<tr class="separator:gab1670168c530b71918b9d3a67d9df863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51919a630317946f8a913b3c3ceae19e"><td class="memItemLeft" align="right" valign="top"><a id="ga51919a630317946f8a913b3c3ceae19e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FAULT_BUCKET_INI</b>&#160;&#160;&#160;(48 - 1)</td></tr>
-<tr class="separator:ga51919a630317946f8a913b3c3ceae19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga369abb0a7bd0c452a340a97be04d291b"><td class="memItemLeft" align="right" valign="top"><a id="ga369abb0a7bd0c452a340a97be04d291b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#ga369abb0a7bd0c452a340a97be04d291b">NR_DEFINED_FAULTS</a>&#160;&#160;&#160;8</td></tr>
-<tr class="memdesc:ga369abb0a7bd0c452a340a97be04d291b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fault status word is 8-bits wide. <br /></td></tr>
-<tr class="separator:ga369abb0a7bd0c452a340a97be04d291b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -180,25 +160,6 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Fault manager for BLDC. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gad3923abf0cfeef2f5aba345f95388344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3923abf0cfeef2f5aba345f95388344">&#9670;&nbsp;</a></span>FAULT_BUCKET_BITS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FAULT_BUCKET_BITS&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialization value for fault counter bucket. </p>
-<p>The fault matrix defines the bucket as a 6-bits unsigned integer bit-field.</p>
-<dl class="section note"><dt>Note</dt><dd>This value should be derived from the faultm update rate somehow - it is expected that faulm_upd() would be called for all fault codes from within the background task. Therefore the bucket counts and/or increment rates should share a timing factor with the background task. </dd></dl>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga5985774dafc2ea1d86ddfc17b5757725"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5985774dafc2ea1d86ddfc17b5757725">&#9670;&nbsp;</a></span>faultm_mat_t</h2>

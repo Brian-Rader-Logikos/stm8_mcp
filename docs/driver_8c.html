@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('driver_8c.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">driver.c File Reference</div>  </div>
@@ -104,47 +103,7 @@ $(document).ready(function(){initNavTree('driver_8c.html',''); initResizable(); 
 
 <p>Interface functions for motor control.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;mcu_stm8s.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="bldc__sm_8h_source.html">bldc_sm.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sequence_8h_source.html">sequence.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="per__task_8h_source.html">per_task.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for driver.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="driver_8c__incl.png" border="0" usemap="#adriver_8c" alt=""/></div>
-<map name="adriver_8c" id="adriver_8c">
-<area shape="rect" title="Interface functions for motor control." alt="" coords="319,5,381,32"/>
-<area shape="rect" title=" " alt="" coords="93,80,159,107"/>
-<area shape="rect" href="mcu__stm8s_8h_source.html" title=" " alt="" coords="183,80,285,107"/>
-<area shape="rect" href="bldc__sm_8h.html" title="state&#45;manager for BLDC" alt="" coords="309,155,391,181"/>
-<area shape="rect" href="sequence_8h.html" title=" " alt="" coords="416,155,505,181"/>
-<area shape="rect" href="per__task_8h.html" title="This file contains the main function for the BLDC motor control." alt="" coords="486,80,569,107"/>
-<area shape="rect" href="system_8h.html" title=" " alt="" coords="209,229,285,256"/>
-<area shape="rect" href="pwm__stm8s_8h.html" title="BLDC motor control &#45; PWM, STM8s specific (TIM2, TIM1 alternate w/ bd.mods.)" alt="" coords="5,155,108,181"/>
-<area shape="rect" title=" " alt="" coords="184,155,284,181"/>
-<area shape="rect" title=" " alt="" coords="171,304,241,331"/>
-</map>
-</div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gae5bef51eab14773cf15110139a458209"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PH0_ADC_TBUF_SZ</b>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:gae5bef51eab14773cf15110139a458209"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7fefae5f3557446a53fd8cbbb3731338"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MID_ADC</b>&#160;&#160;&#160;0x0200</td></tr>
-<tr class="separator:ga7fefae5f3557446a53fd8cbbb3731338"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6973a12dee7b9d1728044bb193697d6f"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DC_HALF_REF</b>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga6973a12dee7b9d1728044bb193697d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f78efa2034990be16c52c9d2f26883e"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GET_BACK_EMF_ADC</b>()&#160;&#160;&#160;    ( ADC_Global - DC_HALF_REF )</td></tr>
-<tr class="separator:ga6f78efa2034990be16c52c9d2f26883e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12325f20c00ac4b36df2980efa8538b9"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>FOUR_SECTORS</b>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:ga12325f20c00ac4b36df2980efa8538b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaf1be59ff67412411f02e8018834ec65c"><td class="memItemLeft" align="right" valign="top">

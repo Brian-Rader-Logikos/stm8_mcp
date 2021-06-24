@@ -1,10 +1,5 @@
 var faultm_8c =
 [
-    [ "FAULT_BUCKET_BITS", "group__faultm.html#gad3923abf0cfeef2f5aba345f95388344", null ],
-    [ "FAULT_BUCKET_INI", "group__faultm.html#ga51919a630317946f8a913b3c3ceae19e", null ],
-    [ "FAULT_BUCKET_LIM", "group__faultm.html#gab1670168c530b71918b9d3a67d9df863", null ],
-    [ "FAULT_BUCKET_MASK", "group__faultm.html#gaa88c411de2d34d1b9d0dce6da63f36a7", null ],
-    [ "NR_DEFINED_FAULTS", "group__faultm.html#ga369abb0a7bd0c452a340a97be04d291b", null ],
     [ "faultm_mat_t", "group__faultm.html#ga5985774dafc2ea1d86ddfc17b5757725", null ],
     [ "faultm_enable_t", "group__faultm.html#gae262d660a79a1fb9489f222289c98e81", [
       [ "DISABLED", "group__faultm.html#ggae262d660a79a1fb9489f222289c98e81a40f39385238042f6ec0cbac821a19fc4", null ],
