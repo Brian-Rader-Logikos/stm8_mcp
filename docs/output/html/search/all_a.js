@@ -1,21 +1,13 @@
 var searchData=
 [
-  ['seq_5fget_5fvbatt_62',['Seq_Get_Vbatt',['../group__sequencer.html#ga7f1f64b2d1d1eff1828a25cd45dac3b9',1,'Seq_Get_Vbatt(void):&#160;sequence.c'],['../group__sequencer.html#ga7f1f64b2d1d1eff1828a25cd45dac3b9',1,'Seq_Get_Vbatt(void):&#160;sequence.c']]],
-  ['sequence_2ec_63',['sequence.c',['../sequence_8c.html',1,'']]],
-  ['sequence_2eh_64',['sequence.h',['../sequence_8h.html',1,'']]],
-  ['sequence_5fstep_65',['Sequence_Step',['../group__sequencer.html#ga4e1c76fc1e8fb89b1d5d13a3941f3375',1,'Sequence_Step(void):&#160;sequence.c'],['../group__sequencer.html#ga4e1c76fc1e8fb89b1d5d13a3941f3375',1,'Sequence_Step(void):&#160;sequence.c']]],
-  ['serialkeypressed_66',['SerialKeyPressed',['../group__mcu.html#ga902247eb59eec04916b30975bcf52507',1,'SerialKeyPressed(char *key):&#160;mcu_stm8s.c'],['../group__mcu.html#ga902247eb59eec04916b30975bcf52507',1,'SerialKeyPressed(char *key):&#160;mcu_stm8s.c']]],
-  ['set_5fdutycycle_67',['set_dutycycle',['../group__mcu.html#ga3b9a4266eb65346463e82237e011ab21',1,'set_dutycycle(uint16_t global_dutycycle):&#160;pwm_stm8s.c'],['../group__mcu.html#ga3b9a4266eb65346463e82237e011ab21',1,'set_dutycycle(uint16_t):&#160;pwm_stm8s.c']]],
-  ['software_20component_20modules_68',['Software Component Modules',['../components.html',1,'index']]],
-  ['software_20design_20requirements_69',['Software Design Requirements',['../index.html',1,'']]],
-  ['state_70',['state',['../structfault__matrix.html#a3cdbc8551542d019e251fb9718b1a33f',1,'fault_matrix']]],
-  ['state_20machine_20representation_71',['State Machine Representation',['../statem.html',1,'index']]],
-  ['statem_5ft_72',['STATEM_T',['../group__per__task.html#ga43c821c17f25a61897a46fffe4a8e818',1,'per_task.c']]],
-  ['step_5fptr_5ft_73',['step_ptr_t',['../group__sequencer.html#gaeacc39aec1757fb1f42ecb7f2115963c',1,'sequence.c']]],
-  ['stm8s_20isr_74',['STM8S ISR',['../group___s_t_m8_s___i_t.html',1,'']]],
-  ['stm8s_5fconf_2eh_75',['stm8s_conf.h',['../stm8s__conf_8h.html',1,'']]],
-  ['stm8s_5fit_2ec_76',['stm8s_it.c',['../stm8s__it_8c.html',1,'']]],
-  ['stm8s_5fit_2eh_77',['stm8s_it.h',['../stm8s__it_8h.html',1,'']]],
-  ['system_20requirements_78',['System Requirements',['../reqmnt_sysd.html',1,'index']]],
-  ['system_2eh_79',['system.h',['../system_8h.html',1,'']]]
+  ['parameter_2eh_61',['parameter.h',['../parameter_8h.html',1,'']]],
+  ['per_5ftask_2ec_62',['per_task.c',['../per__task_8c.html',1,'']]],
+  ['per_5ftask_2eh_63',['per_task.h',['../per__task_8h.html',1,'']]],
+  ['periodic_20task_64',['Periodic Task',['../group__per__task.html',1,'']]],
+  ['periodic_5ftask_5fwake_65',['Periodic_Task_Wake',['../group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702',1,'Periodic_Task_Wake(void):&#160;per_task.c'],['../group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702',1,'Periodic_Task_Wake(void):&#160;per_task.c']]],
+  ['phandler_66',['phandler',['../structui__key__handler__t.html#aed75de088bb560ee7d65f26e6f44051f',1,'ui_key_handler_t']]],
+  ['platform_20stm8s_67',['Platform STM8S',['../group___m_c_u.html',1,'']]],
+  ['pwm_5fchannel_5ftypedef_68',['PWM_Channel_Typedef',['../pwm__stm8s_8h.html#a5ba935a5c17fce8428a0c987a22ead80',1,'pwm_stm8s.h']]],
+  ['pwm_5fstm8s_2ec_69',['pwm_stm8s.c',['../pwm__stm8s_8c.html',1,'']]],
+  ['pwm_5fstm8s_2eh_70',['pwm_stm8s.h',['../pwm__stm8s_8h.html',1,'']]]
 ];

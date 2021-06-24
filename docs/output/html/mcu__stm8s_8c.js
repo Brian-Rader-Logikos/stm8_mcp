@@ -1,7 +1,6 @@
 var mcu__stm8s_8c =
 [
-    [ "MCU_Init", "group__mcu.html#gadb341621e18112a7bc7b2041d75ca5f4", null ],
-    [ "SerialKeyPressed", "group__mcu.html#ga902247eb59eec04916b30975bcf52507", null ],
-    [ "TIM3_setup", "group__mcu.html#gaf0289fcbb97ce9a32cd27e4da0a7a930", null ],
-    [ "UARTputs", "group__mcu.html#gaa6d23ff029f11a9701b6b4714afa4860", null ]
+    [ "MCU_Init", "group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4", null ],
+    [ "MCU_set_comm_timer", "group___m_c_u.html#ga9168ccf6469c7f1125af2662370047a9", null ],
+    [ "SPI_setup", "group___m_c_u.html#ga618143cf2c35d0cd09376dd8109ce3d8", null ]
 ];

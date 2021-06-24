@@ -98,13 +98,13 @@ $(document).ready(function(){initNavTree('ramp_ctrl.html',''); initResizable(); 
 <div class="title">Commutation Timing Control </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_C__Users_gneidermeier_project_bldc_project_um0834_stm8s_discovery_dev_Project_stm8_mcp_docs_md_ramp_ctrl"></a> </p>
+<div class="textblock"><p><a class="anchor" id="md_C__Users_gneidermeier_project_bldc_project_STM8S_StdPeriph_Lib_Project_stm8_mcp_head_docs_md_ramp_ctrl"></a> </p>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Ramp Timing</h1>
 <p>At each time-step of the state-machine, BLDC_OL_comm_tm decrements by BLDC_ONE_RAMP_UNIT. The slope would be expressed by the ratio RAMP_UNIT / EXEC_RATE The ramp function likely should be executed in the ISR context (see TIM4 setup) and not the Background task to ensure ramp timing not affected by interrupt latency.</p>
 <p>When the BLDC_OL_comm_tm has been decremented to the end ramp point (BLDC_OL_TM_HI_SPEED), the state-machine logic shall transition to state RUNNING, and the motor is expected to have attained stable operating condition and discernable back-EMF voltage is present.</p>
-<p><a class="el" href="group___b_l_d_c__sm.html#ga730e540e3754fc2a6edeb292b5e6d43e" title="Periodic state machine update.">BLDC_Update()</a> is called from TIM4_UPD_OVF_IRQHandler ISR and encapsulates any control functions that have deterministic timing requirements i.e. those related directly to motor control and timing.</p>
-<p>TIM4 set to 0.000512 S (512 uS) - see Platform STM8S <a class="el" href="group__mcu.html#gadb341621e18112a7bc7b2041d75ca5f4" title="Initialize MCU and peripheral modules Configures clocks, GPIO, UART, ADC, timers, PWM.">MCU_Init()</a>. TIM4 set to 0.000512 S (512 uS) - see Platform STM8S <a class="el" href="group__mcu.html#gadb341621e18112a7bc7b2041d75ca5f4" title="Initialize MCU and peripheral modules Configures clocks, GPIO, UART, ADC, timers, PWM.">MCU_Init()</a>.</p>
+<p><a class="el" href="group___b_l_d_c__sm.html#ga730e540e3754fc2a6edeb292b5e6d43e" title="Top level task which perform commutation timing update.">BLDC_Update()</a> is called from TIM4_UPD_OVF_IRQHandler ISR and encapsulates any control functions that have deterministic timing requirements i.e. those related directly to motor control and timing.</p>
+<p>TIM4 set to 0.000512 S (512 uS) - see Platform STM8S <a class="el" href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4" title="Initialize MCU and peripheral modules.">MCU_Init()</a>. TIM4 set to 0.000512 S (512 uS) - see Platform STM8S <a class="el" href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4" title="Initialize MCU and peripheral modules.">MCU_Init()</a>.</p>
 <p>The code is easier to read than the diagram. The difference between the present value and target value is taken for the sign/direction of ramp. The ramp unit is added/subtracted on a temp copy of the present timing value so that it can be tested for overshoot/undershoot of the target value.</p>
 <div class="plantumlgraph">
 <img src="inline_umlgraph_12.png" />

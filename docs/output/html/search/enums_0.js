@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bldc_5fstate_5ft_148',['BLDC_STATE_T',['../_b_l_d_c__sm_8h.html#a1b5b6c63e6c1b9c42cba76b6d0d071fb',1,'BLDC_sm.h']]]
+  ['bl_5frunstate_5ft_185',['BL_RUNSTATE_t',['../bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5a',1,'bldc_sm.h']]]
 ];

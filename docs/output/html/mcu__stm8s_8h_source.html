@@ -104,41 +104,54 @@ $(document).ready(function(){initNavTree('mcu__stm8s_8h_source.html',''); initRe
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// stm8s header is provided by the tool chain and is needed for typedefs of uint etc.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//#include &lt;stm8s.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// app headers</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span> <span class="comment">// platform specific delarations</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// app headers</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span> <span class="comment">// platform specific delarations</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pwm__stm8s_8h.html">pwm_stm8s.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* defines -------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* Private defines -----------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/* Public variables  ---------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* Private variables ---------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* function prototypes -----------------------------------------------*/</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;uint8_t <a class="code" href="group__mcu.html#ga902247eb59eec04916b30975bcf52507">SerialKeyPressed</a>(<span class="keywordtype">char</span> *key);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__mcu.html#gaa6d23ff029f11a9701b6b4714afa4860">UARTputs</a>(<span class="keywordtype">char</span> *message);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__mcu.html#gadb341621e18112a7bc7b2041d75ca5f4">MCU_Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__mcu.html#gaf0289fcbb97ce9a32cd27e4da0a7a930">TIM3_setup</a>(uint16_t u16period);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MCU_STM8S</span></div>
-<div class="ttc" id="agroup__mcu_html_ga902247eb59eec04916b30975bcf52507"><div class="ttname"><a href="group__mcu.html#ga902247eb59eec04916b30975bcf52507">SerialKeyPressed</a></div><div class="ttdeci">uint8_t SerialKeyPressed(char *key)</div><div class="ttdoc">Test to see if a key has been pressed on the terminal.</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:230</div></div>
-<div class="ttc" id="agroup__mcu_html_gaa6d23ff029f11a9701b6b4714afa4860"><div class="ttname"><a href="group__mcu.html#gaa6d23ff029f11a9701b6b4714afa4860">UARTputs</a></div><div class="ttdeci">void UARTputs(char *message)</div><div class="ttdoc">Send a message to the debug port (UART2).</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:211</div></div>
-<div class="ttc" id="agroup__mcu_html_gadb341621e18112a7bc7b2041d75ca5f4"><div class="ttname"><a href="group__mcu.html#gadb341621e18112a7bc7b2041d75ca5f4">MCU_Init</a></div><div class="ttdeci">void MCU_Init(void)</div><div class="ttdoc">Initialize MCU and peripheral modules Configures clocks, GPIO, UART, ADC, timers, PWM.</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:480</div></div>
-<div class="ttc" id="agroup__mcu_html_gaf0289fcbb97ce9a32cd27e4da0a7a930"><div class="ttname"><a href="group__mcu.html#gaf0289fcbb97ce9a32cd27e4da0a7a930">TIM3_setup</a></div><div class="ttdeci">void TIM3_setup(uint16_t u16period)</div><div class="ttdoc">Sets TIM3 period.</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:434</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;stm8s_gpio.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Phase A</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define SDA_PORT  SDa_SD_PORT</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define SDA_PIN   SDa_SD_PIN</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Phase B</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define SDB_PORT  SDb_SD_PORT</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define SDB_PIN   SDb_SD_PIN</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Phase C</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define SDC_PORT  SDc_SD_PORT</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define SDC_PIN   SDc_SD_PIN</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifdef _RAISONANCE_</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define PUTCHAR_PROTOTYPE int putchar (char c)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define GETCHAR_PROTOTYPE int getchar (void)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#elif defined (_COSMIC_)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define PUTCHAR_PROTOTYPE char putchar (char c)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define GETCHAR_PROTOTYPE char getchar (void)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* _IAR_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define PUTCHAR_PROTOTYPE int putchar (int c)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define GETCHAR_PROTOTYPE int getchar (void)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _RAISONANCE_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* Public variables  ---------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/* Private variables ---------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* function prototypes -------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;uint8_t SerialKeyPressed(<span class="keywordtype">char</span> *key);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> UARTputs(<span class="keywordtype">char</span> *message);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4">MCU_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___m_c_u.html#ga9168ccf6469c7f1125af2662370047a9">MCU_set_comm_timer</a>(uint16_t);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MCU_STM8S</span></div>
+<div class="ttc" id="agroup___m_c_u_html_ga9168ccf6469c7f1125af2662370047a9"><div class="ttname"><a href="group___m_c_u.html#ga9168ccf6469c7f1125af2662370047a9">MCU_set_comm_timer</a></div><div class="ttdeci">void MCU_set_comm_timer(uint16_t)</div><div class="ttdoc">Set timer that establishes commutation timing period.</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:442</div></div>
+<div class="ttc" id="agroup___m_c_u_html_gadb341621e18112a7bc7b2041d75ca5f4"><div class="ttname"><a href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4">MCU_Init</a></div><div class="ttdeci">void MCU_Init(void)</div><div class="ttdoc">Initialize MCU and peripheral modules.</div><div class="ttdef"><b>Definition:</b> mcu_stm8s.c:586</div></div>
+<div class="ttc" id="apwm__stm8s_8h_html"><div class="ttname"><a href="pwm__stm8s_8h.html">pwm_stm8s.h</a></div><div class="ttdoc">BLDC motor control - PWM, STM8s specific (TIM2, TIM1 alternate w/ bd.mods.)</div></div>
 <div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

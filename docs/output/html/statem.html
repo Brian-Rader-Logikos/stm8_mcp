@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('statem.html',''); initResizable(); });
 <div class="title">State Machine Representation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_C__Users_gneidermeier_project_bldc_project_um0834_stm8s_discovery_dev_Project_stm8_mcp_docs_md_statem"></a> The motor operation cycle is represented in the software design as a state-machine.</p>
+<div class="textblock"><p><a class="anchor" id="md_C__Users_gneidermeier_project_bldc_project_STM8S_StdPeriph_Lib_Project_stm8_mcp_head_docs_md_statem"></a> The motor operation cycle is represented in the software design as a state-machine.</p>
 <p>From powerup, the software initializes the state-machine to RESET. In RESET, the system attempts to reinitialize and clear faults.</p>
 <p>Applying speed signal greater than 0 initiates RAMP - the motor is induced to start turning by initiating the commutation sequence at the maximum timing period at the fixed RampupDC PWM value - progressively shortening the length of the commutation period causes the motor to spin faster.</p>
 <p>Transition to RUNNING occurs when the commutation time period length converges on the period length value from the open-loop timing table (indexed by the Duty Cycle value.</p>

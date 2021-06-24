@@ -9,6 +9,7 @@ var faultm_8c =
       [ "FCLR", "group__faultm.html#gga4975d8cb9adbe12c350ecb749c9bf60fa9f92acd530b090f22515350cf1b9a9fa", null ],
       [ "FSET", "group__faultm.html#gga4975d8cb9adbe12c350ecb749c9bf60faab27f541fb83dfc2f7c94d9abae55025", null ]
     ] ],
+    [ "Faultm_enable", "group__faultm.html#ga0cd06301bce96d671f024db580427810", null ],
     [ "Faultm_get_status", "group__faultm.html#ga8b4a9b64faecb01e9384fe73ec59a4a2", null ],
     [ "Faultm_init", "group__faultm.html#gae5eb8d16f033ea69029200acad87f28e", null ],
     [ "Faultm_set", "group__faultm.html#gabe30b1c9067b8e5dc7193ee400fcd080", null ],

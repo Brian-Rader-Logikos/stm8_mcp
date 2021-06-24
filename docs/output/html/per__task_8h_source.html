@@ -103,22 +103,23 @@ $(document).ready(function(){initNavTree('per__task_8h_source.html',''); initRes
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define PER_TASK_H</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// app headers</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span> <span class="comment">// platform specific delarations</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// app headers</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span> <span class="comment">// platform specific delarations</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* Public function prototypes -----------------------------------------------*/</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702">Periodic_Task_Wake</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;uint8_t <a class="code" href="group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364">Task_Ready</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* Public function prototypes -----------------------------------------------*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702">Periodic_Task_Wake</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;uint8_t <a class="code" href="group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364">Task_Ready</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__per__task.html#gac68e9abb3cf60ebb84898fff09b19f8f">UI_Stop</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// PER_TASK_H</span></div>
-<div class="ttc" id="agroup__per__task_html_ga1e184a4a0ddc95aea21abf68230bf702"><div class="ttname"><a href="group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702">Periodic_Task_Wake</a></div><div class="ttdeci">void Periodic_Task_Wake(void)</div><div class="ttdoc">Trigger background task.</div><div class="ttdef"><b>Definition:</b> per_task.c:383</div></div>
-<div class="ttc" id="agroup__per__task_html_ga5657ac9f57a8ebcb44d9596682b88364"><div class="ttname"><a href="group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364">Task_Ready</a></div><div class="ttdeci">uint8_t Task_Ready(void)</div><div class="ttdoc">Run Periodic Task if ready.</div><div class="ttdef"><b>Definition:</b> per_task.c:366</div></div>
+<div class="ttc" id="agroup__per__task_html_ga1e184a4a0ddc95aea21abf68230bf702"><div class="ttname"><a href="group__per__task.html#ga1e184a4a0ddc95aea21abf68230bf702">Periodic_Task_Wake</a></div><div class="ttdeci">void Periodic_Task_Wake(void)</div><div class="ttdoc">Trigger background task.</div><div class="ttdef"><b>Definition:</b> per_task.c:401</div></div>
+<div class="ttc" id="agroup__per__task_html_ga5657ac9f57a8ebcb44d9596682b88364"><div class="ttname"><a href="group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364">Task_Ready</a></div><div class="ttdeci">uint8_t Task_Ready(void)</div><div class="ttdoc">Run Periodic Task if ready.</div><div class="ttdef"><b>Definition:</b> per_task.c:371</div></div>
+<div class="ttc" id="agroup__per__task_html_gac68e9abb3cf60ebb84898fff09b19f8f"><div class="ttname"><a href="group__per__task.html#gac68e9abb3cf60ebb84898fff09b19f8f">UI_Stop</a></div><div class="ttdeci">void UI_Stop(void)</div><div class="ttdoc">Stop the system.</div><div class="ttdef"><b>Definition:</b> per_task.c:226</div></div>
 <div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -106,9 +106,9 @@ $(document).ready(function(){initNavTree('group___b_l_d_c__sm.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gab3bf28cb48cfbf52693fc46c14fc720b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#gab3bf28cb48cfbf52693fc46c14fc720b">BLDC_Stop</a> (void)</td></tr>
-<tr class="memdesc:gab3bf28cb48cfbf52693fc46c14fc720b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop motor.  <a href="group___b_l_d_c__sm.html#gab3bf28cb48cfbf52693fc46c14fc720b">More...</a><br /></td></tr>
-<tr class="separator:gab3bf28cb48cfbf52693fc46c14fc720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6af60a6d9b9c041b0b35af96cb8cd00e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga6af60a6d9b9c041b0b35af96cb8cd00e">BL_reset</a> (void)</td></tr>
+<tr class="memdesc:ga6af60a6d9b9c041b0b35af96cb8cd00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize/reset motor.  <a href="group___b_l_d_c__sm.html#ga6af60a6d9b9c041b0b35af96cb8cd00e">More...</a><br /></td></tr>
+<tr class="separator:ga6af60a6d9b9c041b0b35af96cb8cd00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafbd4585c8508bff4da3ff9ee0a9f4a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#gafbd4585c8508bff4da3ff9ee0a9f4a2d">BLDC_PWMDC_Set</a> (uint8_t dc)</td></tr>
 <tr class="memdesc:gafbd4585c8508bff4da3ff9ee0a9f4a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets motor speed from commanded throttle/UI setting.  <a href="group___b_l_d_c__sm.html#gafbd4585c8508bff4da3ff9ee0a9f4a2d">More...</a><br /></td></tr>
 <tr class="separator:gafbd4585c8508bff4da3ff9ee0a9f4a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,16 +118,85 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8b9cc5c8b0c4a4d4175e213564ff9b30"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga8b9cc5c8b0c4a4d4175e213564ff9b30">get_commutation_period</a> (void)</td></tr>
 <tr class="memdesc:ga8b9cc5c8b0c4a4d4175e213564ff9b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for commutation period.  <a href="group___b_l_d_c__sm.html#ga8b9cc5c8b0c4a4d4175e213564ff9b30">More...</a><br /></td></tr>
 <tr class="separator:ga8b9cc5c8b0c4a4d4175e213564ff9b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f7990e450b677187fa517d9ffeec071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_b_l_d_c__sm_8h.html#a1b5b6c63e6c1b9c42cba76b6d0d071fb">BLDC_STATE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga6f7990e450b677187fa517d9ffeec071">get_bldc_state</a> (void)</td></tr>
-<tr class="memdesc:ga6f7990e450b677187fa517d9ffeec071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for state variable.  <a href="group___b_l_d_c__sm.html#ga6f7990e450b677187fa517d9ffeec071">More...</a><br /></td></tr>
-<tr class="separator:ga6f7990e450b677187fa517d9ffeec071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga442d26a780c245d8e7b59ddf1917e67d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5a">BL_RUNSTATE_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga442d26a780c245d8e7b59ddf1917e67d">BL_get_state</a> (void)</td></tr>
+<tr class="memdesc:ga442d26a780c245d8e7b59ddf1917e67d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for state variable.  <a href="group___b_l_d_c__sm.html#ga442d26a780c245d8e7b59ddf1917e67d">More...</a><br /></td></tr>
+<tr class="separator:ga442d26a780c245d8e7b59ddf1917e67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga177d26c212c7d70847a3ad080d923c00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga177d26c212c7d70847a3ad080d923c00">BL_get_ct_mode</a> (void)</td></tr>
+<tr class="memdesc:ga177d26c212c7d70847a3ad080d923c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for state variable.  <a href="group___b_l_d_c__sm.html#ga177d26c212c7d70847a3ad080d923c00">More...</a><br /></td></tr>
+<tr class="separator:ga177d26c212c7d70847a3ad080d923c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga730e540e3754fc2a6edeb292b5e6d43e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___b_l_d_c__sm.html#ga730e540e3754fc2a6edeb292b5e6d43e">BLDC_Update</a> (void)</td></tr>
-<tr class="memdesc:ga730e540e3754fc2a6edeb292b5e6d43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodic state machine update.  <a href="group___b_l_d_c__sm.html#ga730e540e3754fc2a6edeb292b5e6d43e">More...</a><br /></td></tr>
+<tr class="memdesc:ga730e540e3754fc2a6edeb292b5e6d43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top level task which perform commutation timing update.  <a href="group___b_l_d_c__sm.html#ga730e540e3754fc2a6edeb292b5e6d43e">More...</a><br /></td></tr>
 <tr class="separator:ga730e540e3754fc2a6edeb292b5e6d43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>BLDC state management and timing control. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga177d26c212c7d70847a3ad080d923c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga177d26c212c7d70847a3ad080d923c00">&#9670;&nbsp;</a></span>BL_get_ct_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BL_get_ct_mode </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for state variable. </p>
+<p>Control Mode is TRUE if transitioned from open-loop to closed-loop commutation control.</p>
+<dl class="section return"><dt>Returns</dt><dd>state value </dd></dl>
+
+</div>
+</div>
+<a id="ga442d26a780c245d8e7b59ddf1917e67d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga442d26a780c245d8e7b59ddf1917e67d">&#9670;&nbsp;</a></span>BL_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="bldc__sm_8h.html#a6d97331b7d9c5e41e55e28a253cf2a5a">BL_RUNSTATE_t</a> BL_get_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for state variable. </p>
+<p>External modules can query if the machine is running or not. There are only these two states bases on the set speed greater or less than the shutdown threshold.</p>
+<dl class="section return"><dt>Returns</dt><dd>state value </dd></dl>
+
+</div>
+</div>
+<a id="ga6af60a6d9b9c041b0b35af96cb8cd00e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6af60a6d9b9c041b0b35af96cb8cd00e">&#9670;&nbsp;</a></span>BL_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BL_reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize/reset motor. </p>
+<p>System reset / re-arm function (has to be called both at program startup as well as following a fault condition state.</p>
+<p>expect to be called from non-ISR/CS context (i.e. from UI handler) </p>
+
+</div>
+</div>
 <a id="ga40f6a780db77b873ca4fc6a1ff5a5f06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga40f6a780db77b873ca4fc6a1ff5a5f06">&#9670;&nbsp;</a></span>BLDC_PWMDC_Get()</h2>
 
@@ -166,34 +235,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets motor speed from commanded throttle/UI setting. </p>
-<p>The speed setting is checked for range and faults, if out of range, Stop() is called.</p>
+<p>The motor is started once reaching the ramp speed threshold, and allowed to slow down to the low shutoff threshold. UI Speed is shared with background task so this function should be invoked only from within a CS.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dc</td><td>Speed input which can be in the range [0:255] but 255 is to be reserved for special use (out of band value). If the PWM resolution changes then the input speed will have to be re-scaled accordingly. </td></tr>
+    <tr><td class="paramname">dc</td><td>Speed input which can be in the range [0:255] </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="gab3bf28cb48cfbf52693fc46c14fc720b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab3bf28cb48cfbf52693fc46c14fc720b">&#9670;&nbsp;</a></span>BLDC_Stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BLDC_Stop </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stop motor. </p>
-<p>System reset / re-arm function (has to be called both at program startup as well as following a fault condition state. </p>
 
 </div>
 </div>
@@ -213,29 +261,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Top level task which perform commutation timing update. </p>
 <p>Periodic state machine update. </p>
-<p>Called from ISR. Evaluate state transition conditions and determine new state. </p>
-
-</div>
-</div>
-<a id="ga6f7990e450b677187fa517d9ffeec071"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f7990e450b677187fa517d9ffeec071">&#9670;&nbsp;</a></span>get_bldc_state()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_b_l_d_c__sm_8h.html#a1b5b6c63e6c1b9c42cba76b6d0d071fb">BLDC_STATE_T</a> get_bldc_state </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Accessor for state variable. </p>
-<dl class="section return"><dt>Returns</dt><dd>state value </dd></dl>
 
 </div>
 </div>

@@ -34,5 +34,7 @@ var stm8s__it_8h =
     [ "UART2_RX_IRQHandler", "stm8s__it_8h.html#a699acff6422d70545cee3662df5c870a", null ],
     [ "UART2_TX_IRQHandler", "stm8s__it_8h.html#adf0e32ee884a42e36c5a5a437f4d2cb0", null ],
     [ "UART3_RX_IRQHandler", "stm8s__it_8h.html#afe683f6f95a5e3b9ca0cd2ef970d292f", null ],
-    [ "UART3_TX_IRQHandler", "stm8s__it_8h.html#ae392954adb5635a27d817e74dae22c58", null ]
+    [ "UART3_TX_IRQHandler", "stm8s__it_8h.html#ae392954adb5635a27d817e74dae22c58", null ],
+    [ "UART4_RX_IRQHandler", "stm8s__it_8h.html#a14fa541693b4908352c40bb3cb1aea71", null ],
+    [ "UART4_TX_IRQHandler", "stm8s__it_8h.html#a44e7f54c7230473913c2f63a73b0ba19", null ]
 ];

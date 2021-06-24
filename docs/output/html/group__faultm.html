@@ -141,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8b4a9b64faecb01e9384fe73ec59a4a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="faultm_8h.html#a611651bf97c3627028310dcaf67d0b6e">fault_status_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#ga8b4a9b64faecb01e9384fe73ec59a4a2">Faultm_get_status</a> (void)</td></tr>
 <tr class="memdesc:ga8b4a9b64faecb01e9384fe73ec59a4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the status word.  <a href="group__faultm.html#ga8b4a9b64faecb01e9384fe73ec59a4a2">More...</a><br /></td></tr>
 <tr class="separator:ga8b4a9b64faecb01e9384fe73ec59a4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cd06301bce96d671f024db580427810"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#ga0cd06301bce96d671f024db580427810">Faultm_enable</a> (<a class="el" href="faultm_8h.html#ac3fe72f7943bfa32dc29b42c9acfcf49">faultm_ID_t</a> faultm_ID, int enable_b)</td></tr>
+<tr class="memdesc:ga0cd06301bce96d671f024db580427810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable triggering of specified fault.  <a href="group__faultm.html#ga0cd06301bce96d671f024db580427810">More...</a><br /></td></tr>
+<tr class="separator:ga0cd06301bce96d671f024db580427810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe30b1c9067b8e5dc7193ee400fcd080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__faultm.html#gabe30b1c9067b8e5dc7193ee400fcd080">Faultm_set</a> (<a class="el" href="faultm_8h.html#ac3fe72f7943bfa32dc29b42c9acfcf49">faultm_ID_t</a> faultm_ID)</td></tr>
 <tr class="memdesc:gabe30b1c9067b8e5dc7193ee400fcd080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fault matrix bit and status word.  <a href="group__faultm.html#gabe30b1c9067b8e5dc7193ee400fcd080">More...</a><br /></td></tr>
 <tr class="separator:gabe30b1c9067b8e5dc7193ee400fcd080"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,9 +174,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fault tracking table. </p>
-<p>The fault matrix shall be instantiated as an array of 8-bit words</p>
-<p>Compact table for tracking faults with leaky-bucket algorithm. </p><dl class="section note"><dt>Note</dt><dd>the matrix is to be instantiated as array of 8-bit words to save RAM </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>the CPU could blow! </dd></dl>
+<p>Compact table for tracking faults with leaky-bucket algorithm.</p>
+<dl class="section note"><dt>Note</dt><dd>Fault matrix instantiated as an array of 8-bit words to save RAM. </dd></dl>
 
 </div>
 </div>
@@ -196,6 +198,43 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga0cd06301bce96d671f024db580427810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0cd06301bce96d671f024db580427810">&#9670;&nbsp;</a></span>Faultm_enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Faultm_enable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faultm_8h.html#ac3fe72f7943bfa32dc29b42c9acfcf49">faultm_ID_t</a>&#160;</td>
+          <td class="paramname"><em>faultm_ID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>enable_b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable triggering of specified fault. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">faultm_ID</td><td>Numerical ID of the fault to be configured. </td></tr>
+    <tr><td class="paramname">enable_b</td><td>boolean for the configured state - TRUE == fault enabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga8b4a9b64faecb01e9384fe73ec59a4a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8b4a9b64faecb01e9384fe73ec59a4a2">&#9670;&nbsp;</a></span>Faultm_get_status()</h2>
 
@@ -261,14 +300,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the fault matrix bit and status word. </p>
-<dl class="section note"><dt>Note</dt><dd>TBD a single fault shuts down the system, i.e. no need to flag/mask multiple faults?</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A single fault shuts down the system, i.e. no need to flag/mask multiple fault conditions.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">faultm_ID</td><td>Numerical ID of the fault to be set.</td></tr>
+    <tr><td class="paramname">faultm_ID</td><td>Numerical ID of the fault to be set. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
 </div>
 </div>

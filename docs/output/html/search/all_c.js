@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['uartputs_83',['UARTputs',['../group__mcu.html#gaa6d23ff029f11a9701b6b4714afa4860',1,'UARTputs(char *message):&#160;mcu_stm8s.c'],['../group__mcu.html#gaa6d23ff029f11a9701b6b4714afa4860',1,'UARTputs(char *message):&#160;mcu_stm8s.c']]]
+  ['task_5fready_96',['Task_Ready',['../group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364',1,'Task_Ready(void):&#160;per_task.c'],['../group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364',1,'Task_Ready(void):&#160;per_task.c']]],
+  ['template_5fproject_97',['Template_Project',['../group___template___project.html',1,'']]],
+  ['timing_20concurrency_20multitaking_98',['Timing Concurrency Multitaking',['../timing_isr.html',1,'index']]]
 ];

@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['task_5fready_80',['Task_Ready',['../group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364',1,'Task_Ready(void):&#160;per_task.c'],['../group__per__task.html#ga5657ac9f57a8ebcb44d9596682b88364',1,'Task_Ready(void):&#160;per_task.c']]],
-  ['tim3_5fsetup_81',['TIM3_setup',['../group__mcu.html#gaf0289fcbb97ce9a32cd27e4da0a7a930',1,'TIM3_setup(uint16_t period):&#160;mcu_stm8s.c'],['../group__mcu.html#gaf0289fcbb97ce9a32cd27e4da0a7a930',1,'TIM3_setup(uint16_t u16period):&#160;mcu_stm8s.c']]],
-  ['timing_20concurrency_20multitaking_82',['Timing Concurrency Multitaking',['../timing_isr.html',1,'index']]]
+  ['seq_5fget_5fbemff_71',['Seq_Get_bemfF',['../group__sequencer.html#ga9f6c1b591db3540732c7a1058622b8b8',1,'Seq_Get_bemfF(void):&#160;sequence.c'],['../group__sequencer.html#ga9f6c1b591db3540732c7a1058622b8b8',1,'Seq_Get_bemfF(void):&#160;sequence.c']]],
+  ['seq_5fget_5fbemfr_72',['Seq_Get_bemfR',['../group__sequencer.html#gac0ec64708d29e474c29429471fd81aa9',1,'Seq_Get_bemfR(void):&#160;sequence.c'],['../group__sequencer.html#gac0ec64708d29e474c29429471fd81aa9',1,'Seq_Get_bemfR(void):&#160;sequence.c']]],
+  ['seq_5fget_5ftiming_5ferror_73',['Seq_get_timing_error',['../group__sequencer.html#ga11823b88e869c581e49beb2a07909e6f',1,'Seq_get_timing_error(void):&#160;sequence.c'],['../group__sequencer.html#ga11823b88e869c581e49beb2a07909e6f',1,'Seq_get_timing_error(void):&#160;sequence.c']]],
+  ['seq_5fget_5ftiming_5ferror_5fp_74',['Seq_get_timing_error_p',['../group__sequencer.html#ga9d0910fc9c72555af3852130a027d968',1,'Seq_get_timing_error_p(void):&#160;sequence.c'],['../group__sequencer.html#ga9d0910fc9c72555af3852130a027d968',1,'Seq_get_timing_error_p(void):&#160;sequence.c']]],
+  ['seq_5fget_5fvbatt_75',['Seq_Get_Vbatt',['../group__sequencer.html#ga7f1f64b2d1d1eff1828a25cd45dac3b9',1,'Seq_Get_Vbatt(void):&#160;sequence.c'],['../group__sequencer.html#ga7f1f64b2d1d1eff1828a25cd45dac3b9',1,'Seq_Get_Vbatt(void):&#160;sequence.c']]],
+  ['sequence_2ec_76',['sequence.c',['../sequence_8c.html',1,'']]],
+  ['sequence_2eh_77',['sequence.h',['../sequence_8h.html',1,'']]],
+  ['sequence_5fstep_78',['Sequence_Step',['../group__sequencer.html#ga4e1c76fc1e8fb89b1d5d13a3941f3375',1,'Sequence_Step(void):&#160;sequence.c'],['../group__sequencer.html#ga4e1c76fc1e8fb89b1d5d13a3941f3375',1,'Sequence_Step(void):&#160;sequence.c']]],
+  ['software_20component_20modules_79',['Software Component Modules',['../components.html',1,'index']]],
+  ['software_20design_20requirements_80',['Software Design Requirements',['../index.html',1,'']]],
+  ['spi_5fcontrold_81',['SPI_controld',['../group__comms.html#gaad9ffc44c4f45542c089a83ccf3d2386',1,'SPI_controld(void):&#160;spi_stm8s.c'],['../group__comms.html#gaad9ffc44c4f45542c089a83ccf3d2386',1,'SPI_controld(void):&#160;spi_stm8s.c']]],
+  ['spi_5fread_82',['SPI_read',['../group__comms.html#ga8659f8495774df2bbf5f10f47224bb7e',1,'spi_stm8s.c']]],
+  ['spi_5fread_5fwrite_83',['SPI_read_write',['../group__comms.html#gabf767bd2a01130b1d7b907b9e8f4cd81',1,'spi_stm8s.c']]],
+  ['spi_5fsetup_84',['SPI_setup',['../group___m_c_u.html#ga618143cf2c35d0cd09376dd8109ce3d8',1,'mcu_stm8s.c']]],
+  ['spi_5fstm8s_2ec_85',['spi_stm8s.c',['../spi__stm8s_8c.html',1,'']]],
+  ['spi_5fstm8s_2eh_86',['spi_stm8s.h',['../spi__stm8s_8h.html',1,'']]],
+  ['spi_5fwrite_87',['SPI_write',['../group__comms.html#ga3f769d5986c9908cbafe4fc88237242c',1,'spi_stm8s.c']]],
+  ['state_88',['state',['../structfault__matrix.html#a3cdbc8551542d019e251fb9718b1a33f',1,'fault_matrix']]],
+  ['state_20machine_20representation_89',['State Machine Representation',['../statem.html',1,'index']]],
+  ['step_5fptr_5ft_90',['step_ptr_t',['../group__sequencer.html#gaeacc39aec1757fb1f42ecb7f2115963c',1,'sequence.c']]],
+  ['stm8s_5fconf_2eh_91',['stm8s_conf.h',['../stm8s__conf_8h.html',1,'']]],
+  ['stm8s_5fit_2ec_92',['stm8s_it.c',['../stm8s__it_8c.html',1,'']]],
+  ['stm8s_5fit_2eh_93',['stm8s_it.h',['../stm8s__it_8h.html',1,'']]],
+  ['system_20requirements_94',['System Requirements',['../reqmnt_sysd.html',1,'index']]],
+  ['system_2eh_95',['system.h',['../system_8h.html',1,'']]]
 ];
