@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: mcu_stm8s.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('mcu__stm8s_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,46 +93,58 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">mcu_stm8s.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+
+<p>STM8S platform and peripheral configuration.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br />
+<code>#include &quot;mcu_stm8s.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="pwm__stm8s_8h_source.html">pwm_stm8s.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for mcu_stm8s.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="mcu__stm8s_8c__incl.png" border="0" usemap="#amcu__stm8s_8c" alt=""/></div>
+<map name="amcu__stm8s_8c" id="amcu__stm8s_8c">
+<area shape="rect" title="STM8S platform and peripheral configuration." alt="" coords="28,5,129,32"/>
+<area shape="rect" href="system_8h.html" title=" " alt="" coords="20,229,96,256"/>
+<area shape="rect" href="mcu__stm8s_8h_source.html" title=" " alt="" coords="28,80,129,107"/>
+<area shape="rect" href="pwm__stm8s_8h.html" title="BLDC motor control &#45; PWM, STM8s specific (TIM2, TIM1 alternate w/ bd.mods.)" alt="" coords="152,155,255,181"/>
+<area shape="rect" title=" " alt="" coords="78,304,148,331"/>
+<area shape="rect" title=" " alt="" coords="28,155,128,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga3b727af478a649dcc679c7a653cffc21"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_DIVIDER</b>&#160;&#160;&#160;ADC1_PRESSEL_FCPU_D4</td></tr>
+<tr class="separator:ga3b727af478a649dcc679c7a653cffc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gadb341621e18112a7bc7b2041d75ca5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4">MCU_Init</a> (void)</td></tr>
+<tr class="memdesc:gadb341621e18112a7bc7b2041d75ca5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize MCU and peripheral modules.  <a href="group___m_c_u.html#gadb341621e18112a7bc7b2041d75ca5f4">More...</a><br /></td></tr>
+<tr class="separator:gadb341621e18112a7bc7b2041d75ca5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>STM8S platform and peripheral configuration. </p>
+<p>This file contains the main function for the BLDC motor control.</p>
+<dl class="section author"><dt>Author</dt><dd>Neidermeier </dd></dl>
+<dl class="section version"><dt>Version</dt><dd></dd></dl>
+<dl class="section date"><dt>Date</dt><dd>December-2020 </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="mcu__stm8s_8c.html">mcu_stm8s.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

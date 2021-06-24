@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: Zero Crossing Point Estimation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('zeropoint.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,40 +95,32 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">Zero Crossing Point Estimation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md_docs_md_zeropoint"></a> There are a number of ways that the zero-crossing point can be estimated from the back-EMF voltage measurement. Safe to say there is no 1 silver bullet!</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Hardware comparator</h2>
+<p>The most straightforward way to get the exact time of the zero-crossing point with no estimation required is to integrate a hardware comparator into the circuit (feature of the A/D peripheral on some MCUs). The comparator takes the neutral point voltage and the phase voltage and output an external trigger to the MCU when the condition switches at the ZCP.</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Midpoint estimation method</h2>
+<p>The challenge of trying to use the back-EMF signal directly lies in part with the noise present in the sensor (unfiltered resistor divider) and also in timing the measurement, since the system (motor) is inherently of sync to begin with. To detect the time of the zero-crossing point, the addition of a comparator to the circuit can provide an external trigger at exact time of the ZCP. In this way there is a ready error signal with the desired setpoint for the ZCP time to be exactly midway (30-degrees).</p>
+<p>Estimation of the ZCP from sampling the back-EMF voltage is based on timing the sample acquisition to acquire 1 sample at 15 degrees and 1 sample at 45 degrees, where the two should add to 0 once the motor is in time and the ZCP is occuring at 30 degrees. It seems to be problematic with this approach as the availability of number of samples is linked to the motor speed as well as PWM frequency.</p>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Integration approach</h2>
+<p>Estimation of the ZCP from sampling the back-EMF voltage is based on averaging as many samples as occur over the 60-degrees duration of the floating sector of the measured phase. The premise being that a timed motor will have equal distribution of the area under the back-EMF curve around the zero-crossing point as the ZCP should occur at exactly halfway point during the floating-phase time period (30-degrees).</p>
+<p>Instead of comparing the average to the ideal neutral voltage, the error comparison is done between the btdc samples and the atdc samples. The ratio between the average of the atdc and btdc sides of the trapezoid ranges from 1/1 when the motor is in time and proportionately above or below one to the amount of timing error ( error = atdc/btdc - 1).</p>
+<p>TIM3 is configured to interrupt at 4-times the intended commutation switching rate, such that TIM3 ISR shall occur 4 times during each commutation period (i.e. at 15 degree intervals within a given 60-degree commutation sector).</p>
+<p>ADC start conversion is triggered by TIM2 ISR (PWM rising edge). Number of PWM pulses (i.e. samples) within the floating period is inverse to motor speed so the <br  />
+ number of samples collected over the 60-degrees time would need to be counted. So a counter in either the TIM2 (PWM rising edge) ISR, or the ADC conversion complete ISR. Counter need to be 0'd start of each commtation period.</p>
+<p>Alternatively, always intiialze buffer to 1/2 DC point (neutral point voltge) and always average across X samples (number of samples needed at lowest motor speed at which the closed loop is effective).</p>
+<p>The battery voltage measurement is obtained by taking the A/D measurement during the active PWM driving section of the commutation period.</p>
+<p><b>TODO: This shall NOT be at 15-degree intervals to use approach 3</b></p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_24.png" />
+</div>
+ </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

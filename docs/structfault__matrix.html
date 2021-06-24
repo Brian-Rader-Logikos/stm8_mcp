@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: fault_matrix Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structfault__matrix.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,46 +93,42 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">fault_matrix Struct Reference<div class="ingroups"><a class="el" href="group__faultm.html">Faultmon</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+
+<p>Fault tracking table.  
+ <a href="structfault__matrix.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a73a0cb0622841b002731bb4fdbdc32cc"><td class="memItemLeft" align="right" valign="top"><a id="a73a0cb0622841b002731bb4fdbdc32cc"></a>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfault__matrix.html#a73a0cb0622841b002731bb4fdbdc32cc">bucket</a>: 6</td></tr>
+<tr class="memdesc:a73a0cb0622841b002731bb4fdbdc32cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">bucket counter (6 bits). <br /></td></tr>
+<tr class="separator:a73a0cb0622841b002731bb4fdbdc32cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09c7ebb406d1f82560efe14ce1bf35c"><td class="memItemLeft" align="right" valign="top"><a id="ad09c7ebb406d1f82560efe14ce1bf35c"></a>
+<a class="el" href="group__faultm.html#gae262d660a79a1fb9489f222289c98e81">faultm_enable_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfault__matrix.html#ad09c7ebb406d1f82560efe14ce1bf35c">enabled</a>: 1</td></tr>
+<tr class="memdesc:ad09c7ebb406d1f82560efe14ce1bf35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bit. <br /></td></tr>
+<tr class="separator:ad09c7ebb406d1f82560efe14ce1bf35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdbc8551542d019e251fb9718b1a33f"><td class="memItemLeft" align="right" valign="top"><a id="a3cdbc8551542d019e251fb9718b1a33f"></a>
+<a class="el" href="group__faultm.html#ga4975d8cb9adbe12c350ecb749c9bf60f">faultm_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfault__matrix.html#a3cdbc8551542d019e251fb9718b1a33f">state</a>: 1</td></tr>
+<tr class="memdesc:a3cdbc8551542d019e251fb9718b1a33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fault activation state. <br /></td></tr>
+<tr class="separator:a3cdbc8551542d019e251fb9718b1a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Fault tracking table. </p>
+<p>Compact table for tracking faults with leaky-bucket algorithm.</p>
+<dl class="section note"><dt>Note</dt><dd>Fault matrix instantiated as an array of 8-bit words to save RAM. </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="structfault__matrix.html">fault_matrix</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

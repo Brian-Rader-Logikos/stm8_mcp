@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: Foreground Background Context</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('mainc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,40 +95,22 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">Foreground Background Context </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md_docs_md_mainc"></a> Next <a class="el" href="background.html">Background Task Operations</a></p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Main Background Task Timing</h1>
+<p>The MCU startup sequence is initiated from the ISR power-on/reset vector, and the ISR handler jumps to the entry point of the C runtime, which by convention calls <a class="el" href="group__per__task.html#ga70db8bd1d499619f7ff9c1ca2ff3c8df" title="Mainly looping.">main()</a>.</p>
+<p><a class="el" href="group__per__task.html#ga70db8bd1d499619f7ff9c1ca2ff3c8df" title="Mainly looping.">main()</a> embodies an infinite loop which is referred to as the background task. So long as interrupts are not masked, any ISRs can interrupt <a class="el" href="group__per__task.html#ga70db8bd1d499619f7ff9c1ca2ff3c8df" title="Mainly looping.">main()</a>. The execution context of <a class="el" href="group__per__task.html#ga70db8bd1d499619f7ff9c1ca2ff3c8df" title="Mainly looping.">main()</a> is restored from the stack upon return from the ISR.</p>
+<p>The stm8s has the capability to assign relative priorities to interrupt sources, but this adds complexity so nested interrupts are avoided in this implementation.</p>
+<p>There are multiple peripherals that must be serviced (ISRs) so the system must be paritioned such that the least amount of cpu time is spent in any one ISR. Most of the time that can be spent in ISRs must be reserved to perform the motor commutation sequence, PWM and ADC sampling sequence. Also the time spent in critical sections implemented (DI/EI) must be minimized as this also adds to the interrupt latency.</p>
+<p>The Background task updates the state machine actions and transitions, so they are maintained at a periodic rate. Within the state machine actions there may be expected to accommodate any non-deterministic behavior of the software related to e.g. the servicing the communication stack, the UI, fault management. These sub-tasks are pushed into the background task but in the worst case, should not exceed the Timer period (hence a frame-overrun).</p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_9.png" />
+</div>
+ </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

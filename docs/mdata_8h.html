@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: mdata.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('mdata_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,46 +93,52 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">mdata.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for mdata.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="mdata_8h__incl.png" border="0" usemap="#amdata_8h" alt=""/></div>
+<map name="amdata_8h" id="amdata_8h">
+<area shape="rect" title=" " alt="" coords="9,5,78,32"/>
+<area shape="rect" href="system_8h.html" title=" " alt="" coords="5,80,81,107"/>
+<area shape="rect" title=" " alt="" coords="9,155,78,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="mdata_8h__dep__incl.png" border="0" usemap="#amdata_8hdep" alt=""/></div>
+<map name="amdata_8hdep" id="amdata_8hdep">
+<area shape="rect" title=" " alt="" coords="17,5,86,32"/>
+<area shape="rect" href="_b_l_d_c__sm_8c.html" title="state&#45;manager for BLDC" alt="" coords="5,80,97,107"/>
+</map>
+</div>
+</div>
+<p><a href="mdata_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaff0f7e40888c05a529f32ffb0b1567f2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mdata.html#gaff0f7e40888c05a529f32ffb0b1567f2">Get_OL_Timing</a> (uint16_t)</td></tr>
+<tr class="memdesc:gaff0f7e40888c05a529f32ffb0b1567f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table lookup for open-loop commutation timing.  <a href="group__mdata.html#gaff0f7e40888c05a529f32ffb0b1567f2">More...</a><br /></td></tr>
+<tr class="separator:gaff0f7e40888c05a529f32ffb0b1567f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd></dd></dl>
+<dl class="section version"><dt>Version</dt><dd></dd></dl>
+<dl class="section date"><dt>Date</dt><dd></dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="mdata_8h.html">mdata.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

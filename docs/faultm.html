@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM8s Brushless MCP: Software Design Requirements</title>
+<title>STM8s Brushless MCP: Fault Monitor</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('faultm.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,40 +95,29 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Software Design Requirements </div>  </div>
+<div class="title">Fault Monitor </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md4"></a>
-System and Product Requirements</h1>
-<p>Functional requirements and use cases.</p>
-<p>System Requirements <a class="el" href="reqmnt_sysd.html">System Requirements</a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Software Design Definition</h1>
-<p>See module descriptions below as well as software documents in the code.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Modules and Structural</h2>
-<ul>
-<li><a class="el" href="components.html">Software Component Modules</a></li>
-<li><a class="el" href="background.html">Background Task Operations</a></li>
-<li><a class="el" href="statem.html">State Machine Representation</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Multitasking Timing Interrupts</h2>
-<ul>
-<li><a class="el" href="timing_isr.html">Timing Concurrency Multitaking</a></li>
-<li><a class="el" href="mainc.html">Foreground Background Context</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Control Algorithms</h2>
-<ul>
-<li><a class="el" href="ramp_ctrl.html">Commutation Timing Control</a></li>
-<li><a class="el" href="zeropoint.html">Zero Crossing Point Estimation</a></li>
-<li><a class="el" href="faultm.html">Fault Monitor</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Data Structures Design</h2>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md_docs_md_faultm"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Fault Matrix</h1>
+<p><a class="el" href="structfault__matrix.html" title="Fault tracking table.">fault_matrix</a> is an array of faultm_mat_t that implements the fault tracking table.</p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_5.png" />
+</div>
+<p>The system word is available externally by <a class="el" href="group__faultm.html#ga8b4a9b64faecb01e9384fe73ec59a4a2" title="Returns the status word.">Faultm_get_status()</a>.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Fault Persistence</h1>
+<p>A fault diagnostic can be managed with leaky bucket algorithm to provide immunity to noisy signal causing false triggering. If the error-condition persists, the bucket increments until the threshold at which the fault will be latched, otherwise the bucket counter would eventually decerement to 0 so no history of the fault remains. Note this allows/assumes the tolerance of a condition for some amount of of time (a high-current load might be tolerated but a short-circuit probably not). <br  />
+</p>
+<p><em><a class="el" href="group__faultm.html#ga8a7fc2fcddbe03432c11cdf3a38093a6" title="Manage fault status with leaky bucket.">Faultm_upd()</a></em> latches the fault activation upon number of occurences of the test-condition reaching a threshold. Ideally, the threshold could be configured to each fault individually (by writing code to initialize explicitly, or alternatively some const array).</p>
+<p>The <em><a class="el" href="group__faultm.html#ga8a7fc2fcddbe03432c11cdf3a38093a6" title="Manage fault status with leaky bucket.">Faultm_upd()</a></em> function call is intended to be invoked with the fault-diagnostic test-condition on a periodic scheduled update - with this being performed in the periodic (background) task, it is updated at a rate of around twice a millisecond. </p><pre class="fragment"> Faultm_upd(VOLTAGE_NG, Vsystem &lt; V_SHUTDOWN_THR);
+</pre><p> Leaky bucket does not necessarily apply to all diagnostic conditions. For example, the THROTTLE_HIGH fault is set/cleared explicitly calling <em>Faultm_set( fault_ID )</em> with the ID of the fault code.</p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_6.png" />
+</div>
+ </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
